@@ -1,0 +1,434 @@
+import React, { useRef } from 'react';
+import Navbar from './Navbar';
+import Tilt from 'react-parallax-tilt';
+import emailjs from '@emailjs/browser';
+
+import './index.css';
+
+import ActionFigure from './images/ActionFigure4.png';
+import BlobBackground from './images/blob.png';
+import CityLogo from './images/city.png';
+import GlendorLogo from './images/glendor.png';
+import StellantisLogo from './images/stellantis.png';
+import SprayAndPlayThumb from './images/sprayandplay2.png';
+import PyFlyerThumb from './images/pyflyer.png';
+import BankMasterThumb from './images/bankmaster.png';
+import PrivaseeThumb from './images/privasee2.png';
+import ShapeShiftersThumb from './images/shapeshifters.png';
+import PortfolioThumb from './images/portfolio.png';
+
+import { FaGithub, FaLinkedin, FaFileAlt, FaExternalLinkAlt } from 'react-icons/fa';
+
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+
+// import ShootingStars from './ShootingStars';
+
+import DesktopModel from './DesktopModel';
+import GlobeModel from './GlobeModel';
+
+import { Suspense } from 'react';
+
+import { Typewriter } from 'react-simple-typewriter';
+
+import { Toaster, toast } from 'react-hot-toast';
+
+function App() {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+  
+    emailjs.sendForm('service_f4wzuen', 'template_bdufpmg', form.current, 'PpzRCWX6v-6tCPA3S')
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success('Message sent successfully!');
+        },
+        (error) => {
+          console.log(error.text);
+          toast.error('Failed to send the message. Please try again.');
+        }
+      );
+  };
+
+  const projects = [
+    { name: 'SprayAndPlay', link: 'https://github.com/AleksaVucak/Spray-and-Play', image: SprayAndPlayThumb },
+    { name: 'PyFlyer', link: 'https://github.com/AleksaVucak/PyFlyer', image: PyFlyerThumb },
+    { name: 'BankMaster', link: 'https://github.com/AleksaVucak/Bank-Master', image: BankMasterThumb },
+    { name: 'Privasee', link: 'https://github.com/AleksaVucak/PrivaSee', image: PrivaseeThumb },
+    { name: 'ShapeShifters', link: 'https://github.com/AleksaVucak/ShapeShifters', image: ShapeShiftersThumb },
+    { name: 'Portfolio', link: 'https://github.com/AleksaVucak/Portfolio', image: PortfolioThumb },
+    { name: 'Oddsify', link: 'https://github.com/AleksaVucak/Oddsify', comingSoon: true },
+  ];
+
+    return (
+    <>
+      <Toaster position="top-right" reverseOrder={false} containerClassName="toaster-container" toastOptions={{ style: { background: '#6366f1', color: 'white', fontWeight: 'bold', padding: '14px 20px', borderRadius: '8px' } }} />
+      <div id="top" className="bg-black text-white min-h-screen relative overflow-hidden">
+        <Navbar />
+        <main className="pt-24 pb-24 relative z-10">
+
+          {/* Hero Section */}
+          <section className="min-h-[calc(100vh-6rem)] flex flex-col md:flex-row items-center justify-center px-4 gap-10">
+            <div className="text-center md:text-left">
+              <h1 className="text-5xl md:text-6xl font-extrabold">Aleksa Vučak</h1>
+              <h2 className="mt-4 text-lg md:text-xl text-indigo-400 tracking-widest font-medium uppercase">
+                <Typewriter words={[ 'SOFTWARE DEVELOPER.', 'WRITES CODE. WRITES STORIES.', 'FROM IDEA TO INTERFACE.', 'ENGINEERING THE UNEXPECTED.', 'TURNING LOGIC INTO MAGIC.', 'WHERE DESIGN MEETS DEV.', 'CODE. CREATE. REPEAT.' ]} loop={0} cursor cursorStyle="|" typeSpeed={100} deleteSpeed={100} delaySpeed={2000} />
+              </h2>
+              <div className="mt-6 space-y-3 flex flex-col items-center md:items-start">
+                <a href="/resume.pdf" className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all">
+                  Resume <FaFileAlt className="text-xl" />
+                </a>
+                <a href="https://github.com/AleksaVucak" className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all">
+                  GitHub <FaGithub className="text-xl" />
+                </a>
+                <a href="https://www.linkedin.com/in/aleksa-vucak-587923298" className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all">
+                  LinkedIn <FaLinkedin className="text-xl" />
+                </a>
+              </div>
+            </div>
+            <div className="w-full max-w-sm">
+              <img src={ActionFigure} alt="Action Figure" className="rounded-2xl w-full object-contain" />
+            </div>
+          </section>
+
+          {/* 3D Model Section */}
+          <section className="relative w-full h-[300px] md:h-[500px] overflow-hidden">
+            <img src={BlobBackground} alt="Blob" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[1750px] max-w-none opacity-100 pointer-events-none mix-blend-screen" />
+            <Canvas dpr={[1, 1.5]} camera={{ position: [0, 1, 5], fov: 50 }}>
+              <ambientLight intensity={5} />
+              <directionalLight position={[2, 6, 2]} intensity={2} />
+              <Suspense fallback={null}>
+                <DesktopModel />
+              </Suspense>
+              <OrbitControls enableZoom={false} />
+            </Canvas>
+          </section>
+
+        {/* Work Experience Section */}
+        <section id="experience" className="py-20 px-4 bg-black">
+          <div className="max-w-5xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white">Work Experience</h2>
+            <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
+              My Professional Path.
+            </p>
+          </div>
+
+          <div className="relative w-full max-w-4xl mx-auto h-[950px]">
+  <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-white"></div>
+
+  {/* Dot 1: City of Windsor */}
+  <div className="absolute left-1/2 top-[15%] transform -translate-x-1/2 -translate-y-1/2">
+    <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+  </div>
+  <p className="absolute top-[15%] left-[calc(50%+2rem)] transform -translate-y-1/2 text-white text-sm md:text-base uppercase">
+    JUN 2022 – AUG 2025
+  </p>
+  <div className="absolute top-[15%] right-[calc(50%+3rem)] transform -translate-y-1/2">
+    <div className="group w-[85vw] md:w-[36rem] h-[300px] md:h-64 [perspective:1000px]">
+      <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        {/* Front */}
+        <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center p-4 md:p-6 [backface-visibility:hidden]">
+        <img src={CityLogo} alt="City of Windsor Logo" className="w-full h-full object-contain p-6" />
+          {/* RIGHT-POINTING ARROW */}
+          <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-l-[12px] border-transparent border-l-white"></div>
+        </div>
+        {/* Back */}
+        <div className="absolute inset-0 bg-indigo-500 text-white p-4 md:p-6 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center">
+          <h3 className="text-lg font-bold">Recreation Program Instructor</h3>
+          <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • IN-PERSON</p>
+          <ul className="list-disc list-inside text-sm mt-3 space-y-1">
+            <li>Led engaging sports classes for kids ages 6-12 in soccer, basketball, floor hockey, and badminton, fostering teamwork and skill development through structured activities.</li>
+            <li>Created and executed over 450 detailed lesson plans that taught fundamental techniques and strategies, ensuring a fun and inclusive learning environment.</li>
+            <li>Facilitated recreational chess sessions, promoting critical thinking and problem-solving skills among 40+ participants.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Dot 2: Glendor */}
+  <div className="absolute left-1/2 top-[50%] transform -translate-x-1/2 -translate-y-1/2">
+    <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+  </div>
+  <p className="absolute top-[50%] right-[calc(50%+2rem)] transform -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
+    SEP 2024 – DEC 2024
+  </p>
+  <div className="absolute top-[50%] left-[calc(50%+3rem)] transform -translate-y-1/2">
+    <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
+      <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        {/* Front */}
+        <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
+          <img src={GlendorLogo} alt="Glendor Logo" className="w-full h-full object-contain p-6" />
+          {/* LEFT-POINTING ARROW */}
+          <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-r-[12px] border-transparent border-r-white"></div>
+        </div>
+        {/* Back */}
+        <div className="absolute inset-0 bg-indigo-500 text-white p-6 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center">
+          <h3 className="text-lg font-bold">Software Engineer Intern</h3>
+          <p className="text-sm font-medium mt-1 uppercase">DRAPER, UT • REMOTE</p>
+          <ul className="list-disc list-inside text-sm mt-3 space-y-1">
+            <li>Applied advanced blur application/detection techniques to process over 2000 medical images and video frames, achieving a 92% accuracy rate in detecting sensitive content.</li>
+            <li>Automated results generation and storage by developing Python scripts that dynamically organized processed data into structured folders, reducing manual intervention by nearly 98%.</li>
+            <li>Worked alongside a team of 5 members to design and deploy AI pipelines, integrating real-time inference capabilities into existing healthcare infrastructure.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Dot 3: Stellantis */}
+  <div className="absolute left-1/2 top-[85%] transform -translate-x-1/2 -translate-y-1/2">
+    <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+  </div>
+  <p className="absolute top-[85%] left-[calc(50%+2rem)] transform -translate-y-1/2 text-white text-sm md:text-base uppercase">
+    APR 2025 – AUG 2025
+  </p>
+  <div className="absolute top-[85%] right-[calc(50%+3rem)] transform -translate-y-1/2">
+    <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
+      <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        {/* Front */}
+        <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
+          <img src={StellantisLogo} alt="Stellantis Logo" className="w-full h-full object-contain p-6" />
+          {/* RIGHT-POINTING ARROW */}
+          <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-l-[12px] border-transparent border-l-white"></div>
+        </div>
+        {/* Back */}
+        <div className="absolute inset-0 bg-indigo-500 text-white p-6 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center">
+          <h3 className="text-lg font-bold">Machine Learning Engineer Co-op</h3>
+          <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • ON-SITE</p>
+          <ul className="list-disc list-inside text-sm mt-3 space-y-1">
+            <li>Incoming Summer 2025 Co-op.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        </section>
+
+        {/* Projects Section */}
+<section id="projects" className="py-45 px-4 bg-black scroll-mt-20">
+  <div className="max-w-5xl mx-auto text-center mb-16">
+    <h2 className="text-4xl md:text-6xl font-extrabold text-white">Projects</h2>
+    <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
+      A LOOK INTO WHAT I’VE BUILT.
+    </p>
+  </div>
+
+  {/* First Row */}
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    {projects.slice(0, 4).map((project, index) => (
+      <div
+        key={index}
+        className="w-full sm:w-72 bg-white text-black rounded-2xl overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-[0_0_20px_4px_white]"
+      >
+        {project.comingSoon ? (
+  <div className="h-40 w-full bg-gray-200 text-black flex items-center justify-center font-bold text-xl">
+    Coming Soon
+  </div>
+) : (
+  <img src={project.image} alt={project.name} className="h-40 w-full object-cover" />
+)}
+        <div className="flex items-center justify-between px-4 py-3 bg-indigo-400 text-black">
+          <h3 className="text-base font-bold">{project.name}</h3>
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
+            <FaExternalLinkAlt className="text-black hover:text-gray-800 transition-colors" />
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* Second Row */}
+  <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-8">
+    {projects.slice(4).map((project, index) => (
+      <div
+        key={index}
+        className="w-full sm:w-72 bg-white text-black rounded-2xl overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-[0_0_20px_4px_white]"
+      >
+        {project.comingSoon ? (
+  <div className="h-40 w-full bg-gray-200 text-black flex items-center justify-center font-bold text-xl">
+    Coming Soon!
+  </div>
+) : (
+  <img src={project.image} alt={project.name} className="h-40 w-full object-cover" />
+)}
+        <div className="flex items-center justify-between px-4 py-3 bg-indigo-400 text-black">
+          <h3 className="text-base font-bold">{project.name}</h3>
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
+            <FaExternalLinkAlt className="text-black hover:text-gray-800 transition-colors" />
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+{/* Skills Section */}
+<section id="skills" className="py-20 px-4 bg-black text-white">
+  <div className="max-w-5xl mx-auto text-center mb-16">
+    <h2 className="text-4xl md:text-6xl font-extrabold text-white">Skills</h2>
+    <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
+      MY TECH STACK.
+    </p>
+  </div>
+
+  {/* Languages - Row 1 */}
+  <div className="max-w-4xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 justify-items-center mb-8 text-center">
+    {[
+      { name: 'Python', icon: require('./images/python.png') },
+      { name: 'Java', icon: require('./images/java.png') },
+      { name: 'C', icon: require('./images/c.png') },
+      { name: 'C++', icon: require('./images/cplusplus.png') },
+      { name: 'JavaScript', icon: require('./images/javascript.png') },
+      { name: 'TypeScript', icon: require('./images/typescript.png') },
+    ].map((skill, i) => (
+      <Tilt
+        key={skill.name}
+        tiltMaxAngleX={25}
+        tiltMaxAngleY={25}
+        perspective={1000}
+        scale={1.05}
+        transitionSpeed={300}
+        gyroscope={true}
+      >
+        <div
+          className="flex flex-col items-center bg-[#111] rounded-xl p-4 hover:shadow-[0_0_20px_#6366f1] transition-all duration-300"
+          style={{ animation: `fadeIn 0.4s ease ${i * 0.1}s both` }}
+        >
+          <img src={skill.icon} alt={skill.name} className="w-12 h-12 mb-2 object-contain" />
+          <span className="text-xs text-gray-300 mt-1">{skill.name}</span>
+        </div>
+      </Tilt>
+    ))}
+  </div>
+
+  {/* Languages - Row 2 (Centered 3 Icons) */}
+  <div className="max-w-xl mx-auto grid grid-cols-3 gap-8 justify-items-center text-center">
+    {[
+      { name: 'SQL', icon: require('./images/sql.png') },
+      { name: 'HTML', icon: require('./images/html.png') },
+      { name: 'CSS', icon: require('./images/css.png') },
+    ].map((skill, i) => (
+      <Tilt
+        key={skill.name}
+        tiltMaxAngleX={45}
+        tiltMaxAngleY={45}
+        perspective={800}
+        scale={1.05}
+        transitionSpeed={300}
+        gyroscope={true}
+      >
+        <div
+          className="flex flex-col items-center bg-[#111] rounded-xl p-4 hover:shadow-[0_0_20px_#6366f1] transition-all duration-300"
+          style={{ animation: `fadeIn 0.4s ease ${i * 0.1}s both` }}
+        >
+          <img src={skill.icon} alt={skill.name} className="w-12 h-12 mb-2 object-contain" />
+          <span className="text-xs text-gray-300 mt-1">{skill.name}</span>
+        </div>
+      </Tilt>
+    ))}
+  </div>
+
+  {/* Line Divider */}
+  <div className="w-32 h-[2px] bg-indigo-400 mx-auto my-16 rounded-full"></div>
+
+  {/* Frameworks Grid */}
+  <div className="max-w-4xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 justify-items-center items-center text-center">
+    {[
+      { name: 'React', icon: require('./images/react.png') },
+      { name: 'Tailwind', icon: require('./images/tailwind.png') },
+      { name: 'Flask', icon: require('./images/flask.png') },
+      { name: 'FastAPI', icon: require('./images/fastapi.png') },
+      { name: 'Three.js', icon: require('./images/threejs.png') },
+      { name: 'EmailJS', icon: require('./images/emailjs.png') },
+    ].map((tool, i) => (
+      <Tilt
+        key={tool.name}
+        tiltMaxAngleX={25}
+        tiltMaxAngleY={25}
+        perspective={1000}
+        scale={1.05}
+        transitionSpeed={300}
+        gyroscope={true}
+      >
+        <div
+          className="flex flex-col items-center bg-[#111] rounded-xl p-4 hover:shadow-[0_0_20px_#6366f1] transition-all duration-300"
+          style={{ animation: `fadeIn 0.4s ease ${(i + 9) * 0.1}s both` }}
+        >
+          <img src={tool.icon} alt={tool.name} className="w-12 h-12 mb-2 object-contain" />
+          <span className="text-xs text-gray-300 mt-1">{tool.name}</span>
+        </div>
+      </Tilt>
+    ))}
+  </div>
+</section>
+{/* Contact Me Section */}
+<section id="contact" className="py-0 px-4 bg-black text-white scroll-mt-20">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-6xl font-extrabold text-white">Contact Me</h2>
+              <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
+                I'm all ears.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Left: Form */}
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
+                <div className="flex flex-col md:flex-row gap-6">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter Name"
+                    required
+                    className="w-full md:w-1/2 p-4 bg-[#111] text-white rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter Email"
+                    required
+                    className="w-full md:w-1/2 p-4 bg-[#111] text-white rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-6">
+                  <textarea
+                    rows="15"
+                    name="message"
+                    placeholder="Enter Message"
+                    required
+                    className="w-full p-4 bg-[#111] text-white rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+                  />
+                  <button
+                    type="submit"
+                    className="w-fit bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl hover:bg-indigo-600 transition-all"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+      {/* Right: Model */}
+<div className="w-full h-[600px]">
+  <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 2.5], fov: 45 }}>
+    <ambientLight intensity={0.7} />
+    <directionalLight position={[2, 2, 5]} intensity={0} />
+    <Suspense fallback={null}>
+    <GlobeModel scale={0.015} position={[0, 0.175, 0]} />
+    </Suspense>
+  </Canvas>
+</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    </>
+  );
+}
+
+export default App;
