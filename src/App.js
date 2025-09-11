@@ -117,9 +117,9 @@ function App() {
     </p>
   </div>
 
-  {/* Height bumped + evenly spaced tops: 10%, 32.5%, 55%, 77.5%, 95% */}
+  {/* Height bumped + evenly spaced tops: 10%, 27.5%, 45%, 62.5%, 80% */}
   <div className="relative w-full max-w-4xl mx-auto h-[1800px]">
-    <div className="absolute left-1/2 -translate-x-1/2 h-full w-1 bg-white"></div>
+  <div className="absolute left-1/2 -translate-x-1/2 top-[0%] bottom-[10%] w-1 bg-white"></div>
 
     {/* 1) City of Windsor — LEFT (top 10%) */}
     <div className="absolute left-1/2 top-[10%] -translate-x-1/2 -translate-y-1/2">
@@ -148,7 +148,7 @@ function App() {
       </div>
     </div>
 
-    {/* 2) Glendor — RIGHT (top 32.5%) */}
+    {/* 2) Glendor — RIGHT (top 27.5%) */}
     <div className="absolute left-1/2 top-[27.5%] -translate-x-1/2 -translate-y-1/2">
       <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
     </div>
@@ -175,7 +175,7 @@ function App() {
       </div>
     </div>
 
-    {/* 3) Stellantis — LEFT (top 55%) */}
+    {/* 3) Stellantis — LEFT (top 45%) */}
     <div className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2">
       <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
     </div>
@@ -200,7 +200,7 @@ function App() {
       </div>
     </div>
 
-    {/* 4) City of Windsor — RIGHT (top 77.5%) */}
+    {/* 4) City of Windsor — RIGHT (top 62.5%) */}
     <div className="absolute left-1/2 top-[62.5%] -translate-x-1/2 -translate-y-1/2">
       <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
     </div>
@@ -227,7 +227,7 @@ function App() {
       </div>
     </div>
 
-    {/* 5) University of Windsor — LEFT (top 95%) */}
+    {/* 5) University of Windsor — LEFT (top 80%) */}
     <div className="absolute left-1/2 top-[80%] -translate-x-1/2 -translate-y-1/2">
       <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
     </div>
@@ -253,7 +253,6 @@ function App() {
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
