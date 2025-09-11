@@ -16,6 +16,7 @@ import BankMasterThumb from './images/bankmaster.png';
 import PrivaseeThumb from './images/privasee2.png';
 import ShapeShiftersThumb from './images/shapeshifters.png';
 import PortfolioThumb from './images/portfolio.png';
+import UWindsorLogo from './images/uwindsor.png'; // <-- added for 5th experience
 
 import { FaGithub, FaLinkedin, FaFileAlt, FaExternalLinkAlt } from 'react-icons/fa';
 
@@ -60,7 +61,7 @@ function App() {
     { name: 'Privasee', link: 'https://github.com/AleksaVucak/PrivaSee', image: PrivaseeThumb },
     { name: 'ShapeShifters', link: 'https://github.com/AleksaVucak/ShapeShifters', image: ShapeShiftersThumb },
     { name: 'Portfolio', link: 'https://github.com/AleksaVucak/Portfolio', image: PortfolioThumb },
-    { name: 'Oddsify', link: 'https://github.com/AleksaVucak/Oddsify', comingSoon: true },
+    { name: 'Zajedno', link: 'https://github.com/AleksaVucak/Oddsify', comingSoon: true },
   ];
 
     return (
@@ -107,107 +108,154 @@ function App() {
             </Canvas>
           </section>
 
-        {/* Work Experience Section */}
-        <section id="experience" className="py-20 px-4 bg-black">
-          <div className="max-w-5xl mx-auto text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-white">Work Experience</h2>
-            <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
-              My Professional Path.
-            </p>
+  {/* Work Experience Section */}
+<section id="experience" className="py-20 px-4 bg-black">
+  <div className="max-w-5xl mx-auto text-center mb-16">
+    <h2 className="text-4xl md:text-6xl font-extrabold text-white">Work Experience</h2>
+    <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
+      My Professional Path.
+    </p>
+  </div>
+
+  {/* Height bumped + evenly spaced tops: 10%, 32.5%, 55%, 77.5%, 95% */}
+  <div className="relative w-full max-w-4xl mx-auto h-[1800px]">
+    <div className="absolute left-1/2 -translate-x-1/2 h-full w-1 bg-white"></div>
+
+    {/* 1) City of Windsor — LEFT (top 10%) */}
+    <div className="absolute left-1/2 top-[10%] -translate-x-1/2 -translate-y-1/2">
+      <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+    </div>
+    <p className="absolute top-[10%] left-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase">
+      JUN 2022 – AUG 2025
+    </p>
+    <div className="absolute top-[10%] right-[calc(50%+3rem)] -translate-y-1/2">
+      <div className="group w-[85vw] md:w-[36rem] h-[300px] md:h-64 [perspective:1000px]">
+        <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center p-4 md:p-6 [backface-visibility:hidden]">
+            <img src={CityLogo} alt="City of Windsor Logo" className="w-full h-full object-contain p-6" />
+            <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-l-[12px] border-transparent border-l-white"></div>
           </div>
-
-          <div className="relative w-full max-w-4xl mx-auto h-[950px]">
-  <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-white"></div>
-
-  {/* Dot 1: City of Windsor */}
-  <div className="absolute left-1/2 top-[15%] transform -translate-x-1/2 -translate-y-1/2">
-    <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
-  </div>
-  <p className="absolute top-[15%] left-[calc(50%+2rem)] transform -translate-y-1/2 text-white text-sm md:text-base uppercase">
-    JUN 2022 – AUG 2025
-  </p>
-  <div className="absolute top-[15%] right-[calc(50%+3rem)] transform -translate-y-1/2">
-    <div className="group w-[85vw] md:w-[36rem] h-[300px] md:h-64 [perspective:1000px]">
-      <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-        {/* Front */}
-        <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center p-4 md:p-6 [backface-visibility:hidden]">
-        <img src={CityLogo} alt="City of Windsor Logo" className="w-full h-full object-contain p-6" />
-          {/* RIGHT-POINTING ARROW */}
-          <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-l-[12px] border-transparent border-l-white"></div>
-        </div>
-        {/* Back */}
-        <div className="absolute inset-0 bg-indigo-500 text-white p-4 md:p-6 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center">
-          <h3 className="text-lg font-bold">Recreation Program Instructor</h3>
-          <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • IN-PERSON</p>
-          <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-            <li>Led engaging sports classes for kids ages 6-12 in soccer, basketball, floor hockey, and badminton, fostering teamwork and skill development through structured activities.</li>
-            <li>Created and executed over 450 detailed lesson plans that taught fundamental techniques and strategies, ensuring a fun and inclusive learning environment.</li>
-            <li>Facilitated recreational chess sessions, promoting critical thinking and problem-solving skills among 40+ participants.</li>
-          </ul>
+          <div className="absolute inset-0 bg-indigo-500 text-white p-4 md:p-6 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center">
+            <h3 className="text-lg font-bold">Recreation Program Instructor</h3>
+            <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • IN-PERSON</p>
+            <ul className="list-disc list-inside text-sm mt-3 space-y-1">
+              <li>Led engaging sports classes for kids ages 6-12 in soccer, basketball, floor hockey, and badminton, fostering teamwork and skill development through structured activities.</li>
+              <li>Created and executed over 450 detailed lesson plans that taught fundamental techniques and strategies, ensuring a fun and inclusive learning environment.</li>
+              <li>Facilitated recreational chess sessions, promoting critical thinking and problem-solving skills among 40+ participants.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  {/* Dot 2: Glendor */}
-  <div className="absolute left-1/2 top-[50%] transform -translate-x-1/2 -translate-y-1/2">
-    <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
-  </div>
-  <p className="absolute top-[50%] right-[calc(50%+2rem)] transform -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
-    SEP 2024 – DEC 2024
-  </p>
-  <div className="absolute top-[50%] left-[calc(50%+3rem)] transform -translate-y-1/2">
-    <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
-      <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-        {/* Front */}
-        <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
-          <img src={GlendorLogo} alt="Glendor Logo" className="w-full h-full object-contain p-6" />
-          {/* LEFT-POINTING ARROW */}
-          <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-r-[12px] border-transparent border-r-white"></div>
-        </div>
-        {/* Back */}
-        <div className="absolute inset-0 bg-indigo-500 text-white p-6 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center">
-          <h3 className="text-lg font-bold">Software Engineer Intern</h3>
-          <p className="text-sm font-medium mt-1 uppercase">DRAPER, UT • REMOTE</p>
-          <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-            <li>Applied advanced blur application/detection techniques to process over 2000 medical images and video frames, achieving a 92% accuracy rate in detecting sensitive content.</li>
-            <li>Automated results generation and storage by developing Python scripts that dynamically organized processed data into structured folders, reducing manual intervention by nearly 98%.</li>
-            <li>Worked alongside a team of 5 members to design and deploy AI pipelines, integrating real-time inference capabilities into existing healthcare infrastructure.</li>
-          </ul>
+    {/* 2) Glendor — RIGHT (top 32.5%) */}
+    <div className="absolute left-1/2 top-[32.5%] -translate-x-1/2 -translate-y-1/2">
+      <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+    </div>
+    <p className="absolute top-[32.5%] right-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
+      SEP 2024 – DEC 2024
+    </p>
+    <div className="absolute top-[32.5%] left-[calc(50%+3rem)] -translate-y-1/2">
+      <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
+        <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
+            <img src={GlendorLogo} alt="Glendor Logo" className="w-full h-full object-contain p-6" />
+            <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-r-[12px] border-transparent border-r-white"></div>
+          </div>
+          <div className="absolute inset-0 bg-indigo-500 text-white p-6 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center">
+            <h3 className="text-lg font-bold">Software Engineer Intern</h3>
+            <p className="text-sm font-medium mt-1 uppercase">DRAPER, UT • REMOTE</p>
+            <ul className="list-disc list-inside text-sm mt-3 space-y-1">
+              <li>Applied advanced blur application/detection techniques to process over 2000 medical images and video frames, achieving a 92% accuracy rate in detecting sensitive content.</li>
+              <li>Automated results generation and storage by developing Python scripts that dynamically organized processed data into structured folders, reducing manual intervention by nearly 98%.</li>
+              <li>Worked alongside a team of 5 members to design and deploy AI pipelines, integrating real-time inference capabilities into existing healthcare infrastructure.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  {/* Dot 3: Stellantis */}
-  <div className="absolute left-1/2 top-[85%] transform -translate-x-1/2 -translate-y-1/2">
-    <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
-  </div>
-  <p className="absolute top-[85%] left-[calc(50%+2rem)] transform -translate-y-1/2 text-white text-sm md:text-base uppercase">
-    APR 2025 – AUG 2025
-  </p>
-  <div className="absolute top-[85%] right-[calc(50%+3rem)] transform -translate-y-1/2">
-    <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
-      <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-        {/* Front */}
-        <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
-          <img src={StellantisLogo} alt="Stellantis Logo" className="w-full h-full object-contain p-6" />
-          {/* RIGHT-POINTING ARROW */}
-          <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-l-[12px] border-transparent border-l-white"></div>
-        </div>
-        {/* Back */}
-        <div className="absolute inset-0 bg-indigo-500 text-white p-6 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center">
-          <h3 className="text-lg font-bold">Machine Learning Engineer Co-op</h3>
-          <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • ON-SITE</p>
-          <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-            <li>Incoming Summer 2025 Co-op.</li>
-          </ul>
+    {/* 3) Stellantis — LEFT (top 55%) */}
+    <div className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2">
+      <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+    </div>
+    <p className="absolute top-[55%] left-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase">
+      APR 2025 – AUG 2025
+    </p>
+    <div className="absolute top-[55%] right-[calc(50%+3rem)] -translate-y-1/2">
+      <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
+        <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
+            <img src={StellantisLogo} alt="Stellantis Logo" className="w-full h-full object-contain p-6" />
+            <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-l-[12px] border-transparent border-l-white"></div>
+          </div>
+          <div className="absolute inset-0 bg-indigo-500 text-white p-6 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center">
+            <h3 className="text-lg font-bold">Machine Learning Engineer Co-op</h3>
+            <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • ON-SITE</p>
+            <ul className="list-disc list-inside text-sm mt-3 space-y-1">
+              <li>Incoming Summer 2025 Co-op.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
+    {/* 4) City of Windsor — RIGHT (top 77.5%) */}
+    <div className="absolute left-1/2 top-[77.5%] -translate-x-1/2 -translate-y-1/2">
+      <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+    </div>
+    <p className="absolute top-[77.5%] right-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
+      JUL 2025 - PRESENT
+    </p>
+    <div className="absolute top-[77.5%] left-[calc(50%+3rem)] -translate-y-1/2">
+      <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
+        <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
+            <img src={CityLogo} alt="City of Windsor Logo" className="w-full h-full object-contain p-6" />
+            <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-r-[12px] border-transparent border-r-white"></div>
+          </div>
+          <div className="absolute inset-0 bg-indigo-500 text-white p-6 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center">
+            <h3 className="text-lg font-bold">Facility Attendant</h3>
+            <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • ON-SITE</p>
+            <ul className="list-disc list-inside text-sm mt-3 space-y-1">
+              <li>TBD</li>
+              <li>TBD</li>
+              <li>TBD</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* 5) University of Windsor — LEFT (top 95%) */}
+    <div className="absolute left-1/2 top-[95%] -translate-x-1/2 -translate-y-1/2">
+      <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+    </div>
+    <p className="absolute top-[95%] left-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase">
+      SEP 2025 - PRESENT
+    </p>
+    <div className="absolute top-[95%] right-[calc(50%+3rem)] -translate-y-1/2">
+      <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
+        <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
+            <img src={UWindsorLogo} alt="University of Windsor Logo" className="w-full h-full object-contain p-6" />
+            <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-l-[12px] border-transparent border-l-white"></div>
+          </div>
+          <div className="absolute inset-0 bg-indigo-500 text-white p-6 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center">
+            <h3 className="text-lg font-bold">Undergraduate Teaching Assistant - COMP 2560</h3>
+            <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • HYBRID</p>
+            <ul className="list-disc list-inside text-sm mt-3 space-y-1">
+              <li>TBD</li>
+              <li>TBD</li>
+              <li>TBD</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-</div>
-        </section>
+</section>
 
         {/* Projects Section */}
 <section id="projects" className="py-45 px-4 bg-black scroll-mt-20">
