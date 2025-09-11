@@ -149,13 +149,13 @@ function App() {
     </div>
 
     {/* 2) Glendor — RIGHT (top 32.5%) */}
-    <div className="absolute left-1/2 top-[32.5%] -translate-x-1/2 -translate-y-1/2">
+    <div className="absolute left-1/2 top-[27.5%] -translate-x-1/2 -translate-y-1/2">
       <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
     </div>
-    <p className="absolute top-[32.5%] right-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
+    <p className="absolute top-[27.5%] right-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
       SEP 2024 – DEC 2024
     </p>
-    <div className="absolute top-[32.5%] left-[calc(50%+3rem)] -translate-y-1/2">
+    <div className="absolute top-[27.5%] left-[calc(50%+3rem)] -translate-y-1/2">
       <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
         <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
           <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
@@ -176,13 +176,13 @@ function App() {
     </div>
 
     {/* 3) Stellantis — LEFT (top 55%) */}
-    <div className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2">
+    <div className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2">
       <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
     </div>
-    <p className="absolute top-[55%] left-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase">
+    <p className="absolute top-[45%] left-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase">
       APR 2025 – AUG 2025
     </p>
-    <div className="absolute top-[55%] right-[calc(50%+3rem)] -translate-y-1/2">
+    <div className="absolute top-[45%] right-[calc(50%+3rem)] -translate-y-1/2">
       <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
         <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
           <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
@@ -201,13 +201,13 @@ function App() {
     </div>
 
     {/* 4) City of Windsor — RIGHT (top 77.5%) */}
-    <div className="absolute left-1/2 top-[77.5%] -translate-x-1/2 -translate-y-1/2">
+    <div className="absolute left-1/2 top-[62.5%] -translate-x-1/2 -translate-y-1/2">
       <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
     </div>
-    <p className="absolute top-[77.5%] right-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
+    <p className="absolute top-[62.5%] right-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
       JUL 2025 - PRESENT
     </p>
-    <div className="absolute top-[77.5%] left-[calc(50%+3rem)] -translate-y-1/2">
+    <div className="absolute top-[62.5%] left-[calc(50%+3rem)] -translate-y-1/2">
       <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
         <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
           <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
@@ -228,13 +228,13 @@ function App() {
     </div>
 
     {/* 5) University of Windsor — LEFT (top 95%) */}
-    <div className="absolute left-1/2 top-[95%] -translate-x-1/2 -translate-y-1/2">
+    <div className="absolute left-1/2 top-[80%] -translate-x-1/2 -translate-y-1/2">
       <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
     </div>
-    <p className="absolute top-[95%] left-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase">
+    <p className="absolute top-[80%] left-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase">
       SEP 2025 - PRESENT
     </p>
-    <div className="absolute top-[95%] right-[calc(50%+3rem)] -translate-y-1/2">
+    <div className="absolute top-[80%] right-[calc(50%+3rem)] -translate-y-1/2">
       <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
         <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
           <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
