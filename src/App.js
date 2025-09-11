@@ -139,9 +139,9 @@ function App() {
                       <h3 className="text-lg font-bold">Recreation Program Instructor</h3>
                       <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • IN-PERSON</p>
                       <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-                        <li>Led engaging sports classes for kids ages 6-12 in soccer, basketball, floor hockey, and badminton, fostering teamwork and skill development through structured activities.</li>
-                        <li>Created and executed over 450 detailed lesson plans that taught fundamental techniques and strategies, ensuring a fun and inclusive learning environment.</li>
-                        <li>Facilitated recreational chess sessions, promoting critical thinking and problem-solving skills among 40+ participants.</li>
+                        <li>Led engaging sports classes for kids ages 6-12 in soccer, basketball, floor hockey, and badminton, fostering teamwork and skill development through structured activities</li>
+                        <li>Created and executed over 450 detailed lesson plans that taught fundamental techniques and strategies, ensuring a fun and inclusive learning environment</li>
+                        <li>Facilitated recreational chess sessions, promoting critical thinking and problem-solving skills among 40+ participants</li>
                       </ul>
                     </div>
                   </div>
@@ -166,9 +166,9 @@ function App() {
                       <h3 className="text-lg font-bold">Software Engineer Intern</h3>
                       <p className="text-sm font-medium mt-1 uppercase">DRAPER, UT • REMOTE</p>
                       <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-                        <li>Applied advanced blur application/detection techniques to process over 2000 medical images and video frames, achieving a 92% accuracy rate in detecting sensitive content.</li>
-                        <li>Automated results generation and storage by developing Python scripts that dynamically organized processed data into structured folders, reducing manual intervention by nearly 98%.</li>
-                        <li>Worked alongside a team of 5 members to design and deploy AI pipelines, integrating real-time inference capabilities into existing healthcare infrastructure.</li>
+                        <li>Applied blur application and detection algorithms to process more than 2000 medical images and video frames, achieving 92% accuracy in identifying sensitive regions while preserving clinical context</li>
+                        <li>Automated results generation and storage with Python scripts that add metadata, rename outputs, and file assets into structured folders, reducing manual intervention by 99% and creating a consistent audit trail for review</li>
+                        <li>Partnered with a team of 7 to deploy AI pipelines with real-time inference in existing healthcare workflows</li>
                       </ul>
                     </div>
                   </div>
@@ -193,9 +193,9 @@ function App() {
                       <h3 className="text-lg font-bold">Machine Learning Engineer Co-op</h3>
                       <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • ON-SITE</p>
                       <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-                        <li>TBD</li>
-                        <li>TBD</li>
-                        <li>TBD</li>
+                        <li>Designed and tuned supervised and unsupervised models on sliding window BMS time series with voltage sag, SOC, and thermal signals, raising precision at the target recall by 21% on batteries across varied drive profiles</li>
+                        <li>Added SOC aware calibration with validation driven thresohld policies from PR analyses, reducing false positive alerts by 32% while preserving recall and preventing leakage through validation test splits</li>
+                        <li>Automated experiment tracking and generated reports for engineers showing window timelines, feature drivers, and risk band summaries, cutting triage time per log by 60% and ensuring reproducible results for integration</li>
                       </ul>
                     </div>
                   </div>
