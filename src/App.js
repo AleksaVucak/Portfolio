@@ -80,7 +80,7 @@ function App() {
       />
       <div id="top" className="bg-black text-white min-h-screen relative overflow-hidden">
         <Navbar />
-        <main className="pt-24 pb-24 relative z-10">
+        <main className="pt-24 pb-0 relative z-10">
           {/* Hero Section */}
           <section className="min-h-[calc(100vh-6rem)] flex flex-col md:flex-row items-center justify-center px-4 gap-10">
             <div className="text-center md:text-left">
@@ -557,7 +557,7 @@ function App() {
           </section>
 
           {/* Contact Me Section */}
-          <section id="contact" className="py-14 px-4 bg-black text_white scroll-mt-2 md:scroll-mt-6">
+          <section id="contact" className="pt-14 pb-0 md:pb-1 px-4 bg-black text_white scroll-mt-2 md:scroll-mt-6 -mb-8">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-6xl font-extrabold text-white">Contact Me</h2>
