@@ -8,7 +8,7 @@ import './index.css';
 import resumePdf from './assets/AleksaVucak_Resume.pdf';
 
 import ActionFigure from './images/ActionFigure3.png';
-import BlobBackground from './images/blob.png';
+import BlobBackground from './images/blob3.png';
 import CityLogo from './images/city.png';
 import GlendorLogo from './images/glendor.png';
 import StellantisLogo from './images/stellantis.png';
