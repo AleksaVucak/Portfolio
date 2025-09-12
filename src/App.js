@@ -112,7 +112,10 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
-                download="AleksaVucak_Resume.pdf"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open(resumePdf, '_blank', 'noopener,noreferrer');
+                }}
               >
                 Resume <FaFileAlt className="text-xl" />
               </a>
