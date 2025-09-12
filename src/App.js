@@ -20,6 +20,8 @@ import ShapeShiftersThumb from './images/shapeshifters.png';
 import PortfolioThumb from './images/portfolio.png';
 import UWindsorLogo from './images/uwindsor.png';
 
+import ShootingStars from './ShootingStars';
+
 import { FaGithub, FaLinkedin, FaFileAlt, FaExternalLinkAlt } from 'react-icons/fa';
 
 import { Canvas } from '@react-three/fiber';
@@ -81,6 +83,7 @@ function App() {
         }}
       />
       <div id="top" className="bg-black text-white min-h-screen relative overflow-hidden">
+        <ShootingStars zIndex={0} />
         <Navbar />
         <main className="pt-24 pb-0 relative z-10">
           {/* Hero Section */}
@@ -162,7 +165,7 @@ function App() {
           </section>
 
           {/* Work Experience Section */}
-          <section id="experience" className="py-14 px-4 bg-black scroll-mt-2 md:scroll-mt-6">
+          <section id="experience" className="py-14 px-4 bg-transparent scroll-mt-2 md:scroll-mt-6">
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Work Experience</h2>
               <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
@@ -415,7 +418,7 @@ function App() {
           </section>
 
           {/* Projects Section */}
-          <section id="projects" className="py-14 px-4 bg-black scroll-mt-6 md:scroll-mt-10 -mt-6 md:-mt-10">
+          <section id="projects" className="py-14 px-4 bg-transparent scroll-mt-6 md:scroll-mt-10 -mt-6 md:-mt-10">
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Projects</h2>
               <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
@@ -473,7 +476,7 @@ function App() {
           </section>
 
           {/* Skills Section */}
-          <section id="skills" className="py-14 px-4 bg-black text-white scroll-mt-6 md:scroll-mt-10">
+          <section id="skills" className="py-14 px-4 bg-transparent text-white scroll-mt-6 md:scroll-mt-10">
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Skills</h2>
               <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">MY TECH STACK.</p>
@@ -571,7 +574,7 @@ function App() {
           </section>
 
           {/* Contact Me Section */}
-          <section id="contact" className="pt-14 pb-0 md:pb-1 px-4 bg-black text_white scroll-mt-2 md:scroll-mt-6 -mb-8">
+          <section id="contact" className="pt-14 pb-0 md:pb-1 px-4 bg-transparent text_white scroll-mt-2 md:scroll-mt-6 -mb-8">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-6xl font-extrabold text-white">Contact Me</h2>
