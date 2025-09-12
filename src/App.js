@@ -61,6 +61,9 @@ function App() {
 
   return (
     <>
+      {/* Smooth scrolling for anchor navigation */}
+      <style>{`html{scroll-behavior:smooth}`}</style>
+
       <Toaster
         position="top-right"
         reverseOrder={false}
@@ -145,7 +148,7 @@ function App() {
           </section>
 
           {/* Work Experience Section */}
-          <section id="experience" className="py-14 px-4 bg-black">
+          <section id="experience" className="py-14 px-4 bg-black scroll-mt-2 md:scroll-mt-6">
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Work Experience</h2>
               <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
@@ -270,7 +273,7 @@ function App() {
               <div className="absolute top-[12%] right-[calc(50%+3rem)] -translate-y-1/2">
                 <div className="group w-[85vw] md:w-[36rem] h-[300px] md:h-64 [perspective:1000px]">
                   <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                    <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center p-4 md:p-6 [backface-visibility:hidden]">
+                    <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
                       <img src={CityLogo} alt="City of Windsor Logo" className="w-full h-full object-contain p-6" />
                       <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-b-[10px] border-l-[12px] border-transparent border-l-white"></div>
                     </div>
@@ -398,7 +401,7 @@ function App() {
           </section>
 
           {/* Projects Section */}
-          <section id="projects" className="py-14 px-4 bg-black scroll-mt-20 -mt-6 md:-mt-10">
+          <section id="projects" className="py-14 px-4 bg-black scroll-mt-6 md:scroll-mt-10 -mt-6 md:-mt-10">
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Projects</h2>
               <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
@@ -430,7 +433,7 @@ function App() {
               ))}
             </div>
 
-            {/* Second Row */}
+            {/* Second Row (centered) */}
             <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-8">
               {projects.slice(4).map((project, index) => (
                 <div
@@ -456,7 +459,7 @@ function App() {
           </section>
 
           {/* Skills Section */}
-          <section id="skills" className="py-14 px-4 bg-black text-white">
+          <section id="skills" className="py-14 px-4 bg-black text-white scroll-mt-6 md:scroll-mt-10">
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Skills</h2>
               <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">MY TECH STACK.</p>
@@ -554,14 +557,14 @@ function App() {
           </section>
 
           {/* Contact Me Section */}
-          <section id="contact" className="py-14 px-4 bg-black text-white scroll-mt-20">
+          <section id="contact" className="py-14 px-4 bg-black text_white scroll-mt-2 md:scroll-mt-6">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-6xl font-extrabold text-white">Contact Me</h2>
                 <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">I'm all ears.</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 {/* Left: Form */}
                 <form ref={form} onSubmit={sendEmail} className="space-y-6">
                   <div className="flex flex-col md:flex-row gap-6">
@@ -570,24 +573,24 @@ function App() {
                       name="name"
                       placeholder="Enter Name"
                       required
-                      className="w-full md:w-1/2 p-4 bg-[#111] text-white rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="w-full md:w-1/2 p-4 bg-[#111] text_white rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     />
                     <input
                       type="email"
                       name="email"
                       placeholder="Enter Email"
                       required
-                      className="w-full md:w-1/2 p-4 bg-[#111] text-white rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="w-full md:w-1/2 p-4 bg-[#111] text_white rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     />
                   </div>
 
                   <div className="flex flex-col gap-6">
                     <textarea
-                      rows="10"
+                      rows="15"
                       name="message"
                       placeholder="Enter Message"
                       required
-                      className="w-full p-4 bg-[#111] text-white rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+                      className="w-full p-4 bg-[#111] text_white rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
                     />
                     <button
                       type="submit"
@@ -599,7 +602,7 @@ function App() {
                 </form>
 
                 {/* Right: Model */}
-                <div className="w-full h-[380px] sm:h-[450px] md:h-[600px]">
+                <div className="w-full h-[600px]">
                   <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 2.5], fov: 45 }}>
                     <ambientLight intensity={0.7} />
                     <directionalLight position={[2, 2, 5]} intensity={0} />
