@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, Suspense } from 'react';
 import Navbar from './Navbar';
 import Tilt from 'react-parallax-tilt';
 import emailjs from '@emailjs/browser';
@@ -16,32 +16,27 @@ import BankMasterThumb from './images/bankmaster.png';
 import PrivaseeThumb from './images/privasee2.png';
 import ShapeShiftersThumb from './images/shapeshifters.png';
 import PortfolioThumb from './images/portfolio.png';
-import UWindsorLogo from './images/uwindsor.png'; // <-- added for 5th experience
+import UWindsorLogo from './images/uwindsor.png';
 
 import { FaGithub, FaLinkedin, FaFileAlt, FaExternalLinkAlt } from 'react-icons/fa';
 
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
-// import ShootingStars from './ShootingStars';
-
 import DesktopModel from './DesktopModel';
 import GlobeModel from './GlobeModel';
 
-import { Suspense } from 'react';
-
 import { Typewriter } from 'react-simple-typewriter';
-
 import { Toaster, toast } from 'react-hot-toast';
 
 function App() {
-
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-  
-    emailjs.sendForm('service_f4wzuen', 'template_bdufpmg', form.current, 'PpzRCWX6v-6tCPA3S')
+
+    emailjs
+      .sendForm('service_f4wzuen', 'template_bdufpmg', form.current, 'PpzRCWX6v-6tCPA3S')
       .then(
         (result) => {
           console.log(result.text);
@@ -66,26 +61,63 @@ function App() {
 
   return (
     <>
-      <Toaster position="top-right" reverseOrder={false} containerClassName="toaster-container" toastOptions={{ style: { background: '#6366f1', color: 'white', fontWeight: 'bold', padding: '14px 20px', borderRadius: '8px' } }} />
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        containerClassName="toaster-container"
+        toastOptions={{
+          style: {
+            background: '#6366f1',
+            color: 'white',
+            fontWeight: 'bold',
+            padding: '14px 20px',
+            borderRadius: '8px',
+          },
+        }}
+      />
       <div id="top" className="bg-black text-white min-h-screen relative overflow-hidden">
         <Navbar />
         <main className="pt-24 pb-24 relative z-10">
-
           {/* Hero Section */}
           <section className="min-h-[calc(100vh-6rem)] flex flex-col md:flex-row items-center justify-center px-4 gap-10">
             <div className="text-center md:text-left">
               <h1 className="text-5xl md:text-6xl font-extrabold">Aleksa Vučak</h1>
               <h2 className="mt-4 text-lg md:text-xl text-indigo-400 tracking-widest font-medium uppercase">
-                <Typewriter words={[ 'SOFTWARE DEVELOPER.', 'WRITES CODE. WRITES STORIES.', 'FROM IDEA TO INTERFACE.', 'ENGINEERING THE UNEXPECTED.', 'TURNING LOGIC INTO MAGIC.', 'WHERE DESIGN MEETS DEV.', 'CODE. CREATE. REPEAT.' ]} loop={0} cursor cursorStyle="|" typeSpeed={100} deleteSpeed={100} delaySpeed={2000} />
+                <Typewriter
+                  words={[
+                    'SOFTWARE DEVELOPER.',
+                    'WRITES CODE. WRITES STORIES.',
+                    'FROM IDEA TO INTERFACE.',
+                    'ENGINEERING THE UNEXPECTED.',
+                    'TURNING LOGIC INTO MAGIC.',
+                    'WHERE DESIGN MEETS DEV.',
+                    'CODE. CREATE. REPEAT.',
+                  ]}
+                  loop={0}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={100}
+                  deleteSpeed={100}
+                  delaySpeed={2000}
+                />
               </h2>
               <div className="mt-6 space-y-3 flex flex-col items-center md:items-start">
-                <a href="/resume.pdf" className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all">
+                <a
+                  href="/resume.pdf"
+                  className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
+                >
                   Resume <FaFileAlt className="text-xl" />
                 </a>
-                <a href="https://github.com/AleksaVucak" className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all">
+                <a
+                  href="https://github.com/AleksaVucak"
+                  className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
+                >
                   GitHub <FaGithub className="text-xl" />
                 </a>
-                <a href="https://www.linkedin.com/in/aleksa-vucak-587923298" className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all">
+                <a
+                  href="https://www.linkedin.com/in/aleksa-vucak-587923298"
+                  className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
+                >
                   LinkedIn <FaLinkedin className="text-xl" />
                 </a>
               </div>
@@ -97,7 +129,11 @@ function App() {
 
           {/* 3D Model Section */}
           <section className="relative w-full h-[300px] md:h-[500px] overflow-hidden">
-            <img src={BlobBackground} alt="Blob" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[1750px] max-w-none opacity-100 pointer-events-none mix-blend-screen" />
+            <img
+              src={BlobBackground}
+              alt="Blob"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[1750px] max-w-none opacity-100 pointer-events-none mix-blend-screen"
+            />
             <Canvas dpr={[1, 1.5]} camera={{ position: [0, 1, 5], fov: 50 }}>
               <ambientLight intensity={5} />
               <directionalLight position={[2, 6, 2]} intensity={2} />
@@ -109,7 +145,7 @@ function App() {
           </section>
 
           {/* Work Experience Section */}
-          <section id="experience" className="pt-16 pb-8 px-4 bg-black">
+          <section id="experience" className="py-14 px-4 bg-black">
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Work Experience</h2>
               <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
@@ -117,18 +153,19 @@ function App() {
               </p>
             </div>
 
-            {/* Height + dot positions: 10%, 27.5%, 45%, 62.5%, 88% */}
+            {/* Timeline */}
             <div className="relative w-full max-w-4xl mx-auto h-[1800px]">
-              <div className="absolute left-1/2 -translate-x-1/2 top-[0%] bottom-[2%] w-1 bg-white"></div>
+              {/* little tails above and below the first/last dots */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-[0%] bottom-[0%] w-1 bg-white"></div>
 
-              {/* 1) City of Windsor — LEFT (top 10%) */}
-              <div className="absolute left-1/2 top-[10%] -translate-x-1/2 -translate-y-1/2">
+              {/* 1) City of Windsor — LEFT (top 12%) */}
+              <div className="absolute left-1/2 top-[12%] -translate-x-1/2 -translate-y-1/2">
                 <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
               </div>
-              <p className="absolute top-[10%] left-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase">
+              <p className="absolute top-[12%] left-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase">
                 JUN 2022 – AUG 2025
               </p>
-              <div className="absolute top-[10%] right-[calc(50%+3rem)] -translate-y-1/2">
+              <div className="absolute top-[12%] right-[calc(50%+3rem)] -translate-y-1/2">
                 <div className="group w-[85vw] md:w-[36rem] h-[300px] md:h-64 [perspective:1000px]">
                   <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                     <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center p-4 md:p-6 [backface-visibility:hidden]">
@@ -139,23 +176,32 @@ function App() {
                       <h3 className="text-lg font-bold">Recreation Program Instructor</h3>
                       <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • IN-PERSON</p>
                       <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-                        <li>Led engaging sports classes for kids ages 6-12 in soccer, basketball, floor hockey, and badminton, fostering teamwork and skill development through structured activities</li>
-                        <li>Created and executed over 450 detailed lesson plans that taught fundamental techniques and strategies, ensuring a fun and inclusive learning environment</li>
-                        <li>Facilitated recreational chess sessions, promoting critical thinking and problem-solving skills among 40+ participants</li>
+                        <li>
+                          Led engaging sports classes for kids ages 6-12 in soccer, basketball, floor hockey, and badminton,
+                          fostering teamwork and skill development through structured activities
+                        </li>
+                        <li>
+                          Created and executed over 450 detailed lesson plans that taught fundamental techniques and strategies,
+                          ensuring a fun and inclusive learning environment
+                        </li>
+                        <li>
+                          Facilitated recreational chess sessions, promoting critical thinking and problem-solving skills among 40+
+                          participants
+                        </li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* 2) Glendor — RIGHT (top 27.5%) */}
-              <div className="absolute left-1/2 top-[27.5%] -translate-x-1/2 -translate-y-1/2">
+              {/* 2) Glendor — RIGHT (top 31%) */}
+              <div className="absolute left-1/2 top-[31%] -translate-x-1/2 -translate-y-1/2">
                 <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
               </div>
-              <p className="absolute top-[27.5%] right-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
+              <p className="absolute top-[31%] right-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
                 SEP 2024 – DEC 2024
               </p>
-              <div className="absolute top-[27.5%] left-[calc(50%+3rem)] -translate-y-1/2">
+              <div className="absolute top-[31%] left-[calc(50%+3rem)] -translate-y-1/2">
                 <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
                   <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                     <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
@@ -166,8 +212,15 @@ function App() {
                       <h3 className="text-lg font-bold">Software Engineer Intern</h3>
                       <p className="text-sm font-medium mt-1 uppercase">DRAPER, UT • REMOTE</p>
                       <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-                        <li>Applied blur application and detection algorithms to process more than 2000 medical images and video frames, achieving 92% accuracy in identifying sensitive regions while preserving clinical context</li>
-                        <li>Automated results generation and storage with Python scripts that add metadata, rename outputs, and file assets into structured folders, reducing manual intervention by 99% and creating a consistent audit trail for review</li>
+                        <li>
+                          Applied blur application and detection algorithms to process more than 2000 medical images and video
+                          frames, achieving 92% accuracy in identifying sensitive regions while preserving clinical context
+                        </li>
+                        <li>
+                          Automated results generation and storage with Python scripts that add metadata, rename outputs, and file
+                          assets into structured folders, reducing manual intervention by 99% and creating a consistent audit trail
+                          for review
+                        </li>
                         <li>Partnered with a team of 7 to deploy AI pipelines with real-time inference in existing healthcare workflows</li>
                       </ul>
                     </div>
@@ -175,14 +228,14 @@ function App() {
                 </div>
               </div>
 
-              {/* 3) Stellantis — LEFT (top 45%) */}
-              <div className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2">
+              {/* 3) Stellantis — LEFT (top 50%) */}
+              <div className="absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2">
                 <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
               </div>
-              <p className="absolute top-[45%] left-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase">
+              <p className="absolute top-[50%] left-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase">
                 APR 2025 – AUG 2025
               </p>
-              <div className="absolute top-[45%] right-[calc(50%+3rem)] -translate-y-1/2">
+              <div className="absolute top-[50%] right-[calc(50%+3rem)] -translate-y-1/2">
                 <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
                   <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                     <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
@@ -193,23 +246,34 @@ function App() {
                       <h3 className="text-lg font-bold">Machine Learning Engineer Co-op</h3>
                       <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • ON-SITE</p>
                       <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-                        <li>Designed and tuned supervised and unsupervised models on sliding window BMS time series with voltage sag, SOC, and thermal signals, raising precision at the target recall by 21% on batteries across varied drive profiles</li>
-                        <li>Added SOC aware calibration with validation driven thresohld policies from PR analyses, reducing false positive alerts by 32% while preserving recall and preventing leakage through validation test splits</li>
-                        <li>Automated experiment tracking and generated reports for engineers showing window timelines, feature drivers, and risk band summaries, cutting triage time per log by 60% and ensuring reproducible results for integration</li>
+                        <li>
+                          Designed and tuned supervised and unsupervised models on sliding window BMS time series with voltage sag,
+                          SOC, and thermal signals, raising precision at the target recall by 21% on batteries across varied drive
+                          profiles
+                        </li>
+                        <li>
+                          Added SOC aware calibration with validation driven threshold policies from PR analyses, reducing false
+                          positive alerts by 32% while preserving recall and preventing leakage through validation test splits
+                        </li>
+                        <li>
+                          Automated experiment tracking and generated reports for engineers showing window timelines, feature
+                          drivers, and risk band summaries, cutting triage time per log by 60% and ensuring reproducible results for
+                          integration
+                        </li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* 4) City of Windsor — RIGHT (top 62.5%) */}
-              <div className="absolute left-1/2 top-[62.5%] -translate-x-1/2 -translate-y-1/2">
+              {/* 4) City of Windsor — RIGHT (top 69%) */}
+              <div className="absolute left-1/2 top-[69%] -translate-x-1/2 -translate-y-1/2">
                 <div className="w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
               </div>
-              <p className="absolute top-[62.5%] right-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
+              <p className="absolute top-[69%] right-[calc(50%+2rem)] -translate-y-1/2 text-white text-sm md:text-base uppercase text-right">
                 JUL 2025 - PRESENT
               </p>
-              <div className="absolute top-[62.5%] left-[calc(50%+3rem)] -translate-y-1/2">
+              <div className="absolute top-[69%] left-[calc(50%+3rem)] -translate-y-1/2">
                 <div className="group w-[90vw] md:w-[36rem] h-64 [perspective:1000px]">
                   <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                     <div className="absolute inset-0 bg-white rounded-xl flex items-center justify-center [backface-visibility:hidden]">
@@ -220,9 +284,15 @@ function App() {
                       <h3 className="text-lg font-bold">Facility Attendant</h3>
                       <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • ON-SITE</p>
                       <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-                        <li>Operate front desk with ActiveNet, processing 150–250 check-ins per day while handling registrations, bookings, payments, and accurate cash closure</li>
+                        <li>
+                          Operate front desk with ActiveNet, processing 150–250 check-ins per day while handling registrations,
+                          bookings, payments, and accurate cash closure
+                        </li>
                         <li>Prepare and reset spaces for programs and rentals, completing 4–8 room turnovers per shift to keep schedules on time</li>
-                        <li>Monitor facility safety and customer experience through scheduled walkthroughs, policy enforcement, incident response, and clear documentation and handoffs</li>
+                        <li>
+                          Monitor facility safety and customer experience through scheduled walkthroughs, policy enforcement,
+                          incident response, and clear documentation and handoffs
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -247,20 +317,25 @@ function App() {
                       <h3 className="text-lg font-bold">Undergraduate Teaching Assistant</h3>
                       <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • HYBRID</p>
                       <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-                        <li>TBD</li>
-                        <li>TBD</li>
-                        <li>TBD</li>
+                        <li>
+                          TBD
+                        </li>
+                        <li>
+                          TBD
+                        </li>
+                        <li>
+                          TBD
+                        </li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </section>
 
           {/* Projects Section */}
-          <section id="projects" className="pt-12 pb-16 px-4 bg-black scroll-mt-20">
+          <section id="projects" className="py-14 px-4 bg-black scroll-mt-20">
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Projects</h2>
               <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
@@ -318,12 +393,10 @@ function App() {
           </section>
 
           {/* Skills Section */}
-          <section id="skills" className="py-16 px-4 bg-black text-white">
+          <section id="skills" className="py-14 px-4 bg-black text-white">
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Skills</h2>
-              <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
-                MY TECH STACK.
-              </p>
+              <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">MY TECH STACK.</p>
             </div>
 
             {/* Languages - Row 1 */}
@@ -418,13 +491,11 @@ function App() {
           </section>
 
           {/* Contact Me Section */}
-          <section id="contact" className="py-16 px-4 bg-black text-white scroll-mt-20">
+          <section id="contact" className="py-14 px-4 bg-black text-white scroll-mt-20">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-6xl font-extrabold text-white">Contact Me</h2>
-                <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
-                  I'm all ears.
-                </p>
+                <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">I'm all ears.</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -463,6 +534,7 @@ function App() {
                     </button>
                   </div>
                 </form>
+
                 {/* Right: Model */}
                 <div className="w-full h-[600px]">
                   <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 2.5], fov: 45 }}>
