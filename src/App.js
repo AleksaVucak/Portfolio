@@ -5,6 +5,8 @@ import emailjs from '@emailjs/browser';
 
 import './index.css';
 
+import resumePdf from './assets/AleksaVucak_Resume.pdf';
+
 import ActionFigure from './images/ActionFigure3.png';
 import BlobBackground from './images/blob.png';
 import CityLogo from './images/city.png';
@@ -106,10 +108,11 @@ function App() {
               </h2>
               <div className="mt-6 space-y-3 flex flex-col items-center md:items-start">
               <a
-                href="/AleksaVucak_Resume.pdf"
+                href={resumePdf}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
+                download="AleksaVucak_Resume.pdf"
               >
                 Resume <FaFileAlt className="text-xl" />
               </a>
