@@ -1,12 +1,19 @@
+// Import React and necessary hooks for refs and lazy-loading boundaries
 import React, { useRef, Suspense } from 'react';
+// Import site navigation component
 import Navbar from './Navbar';
+// Import tilt effect for skill cards
 import Tilt from 'react-parallax-tilt';
+// Import EmailJS for contact form submission
 import emailjs from '@emailjs/browser';
 
+// Import global styles
 import './index.css';
 
+// Import the resume PDF asset (served by bundler)
 import resumePdf from './assets/AleksaVucak_Resume.pdf';
 
+// Import hero and logo/image assets used across sections
 import ActionFigure from './images/ActionFigure3.png';
 import BlobBackground from './images/blob3.png';
 import CityLogo from './images/city.png';
@@ -20,39 +27,56 @@ import ShapeShiftersThumb from './images/shapeshifters.png';
 import PortfolioThumb from './images/portfolio.png';
 import UWindsorLogo from './images/uwindsor.png';
 
+// Import animated background canvas
 import ShootingStars from './ShootingStars';
 
+// Import social/link icons
 import { FaGithub, FaLinkedin, FaFileAlt, FaExternalLinkAlt } from 'react-icons/fa';
 
+// Import React Three Fiber canvas and controls for 3D models
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
+// Import custom 3D models
 import DesktopModel from './DesktopModel';
 import GlobeModel from './GlobeModel';
 
+// Import typewriter effect and toast notifications
 import { Typewriter } from 'react-simple-typewriter';
 import { Toaster, toast } from 'react-hot-toast';
 
+// Main application component
 function App() {
+  // Ref to the contact form element for EmailJS
   const form = useRef();
 
+  // Handle contact form submission via EmailJS
   const sendEmail = (e) => {
+    // Prevent default form submission/refresh
     e.preventDefault();
 
+    // Send the form using EmailJS service, template, and public key
     emailjs
       .sendForm('service_f4wzuen', 'template_bdufpmg', form.current, 'PpzRCWX6v-6tCPA3S')
       .then(
+        // Success callback
         (result) => {
+          // Log EmailJS result text (for debugging)
           console.log(result.text);
+          // Show success toast to the user
           toast.success('Message sent successfully!');
         },
+        // Error callback
         (error) => {
+          // Log error text (for debugging)
           console.log(error.text);
+          // Show failure toast to the user
           toast.error('Failed to send the message. Please try again.');
         }
       );
   };
 
+  // Project cards configuration: name, link, image, and optional "comingSoon"
   const projects = [
     { name: 'SprayAndPlay', link: 'https://github.com/AleksaVucak/Spray-and-Play', image: SprayAndPlayThumb },
     { name: 'PyFlyer', link: 'https://github.com/AleksaVucak/PyFlyer', image: PyFlyerThumb },
@@ -63,11 +87,13 @@ function App() {
     { name: 'Zajedno', link: 'https://github.com/AleksaVucak/Oddsify', comingSoon: true },
   ];
 
+  // Render the portfolio application
   return (
     <>
-      {/* Smooth scrolling for anchor navigation */}
+      {/* Inject global smooth-scroll behavior for anchor links */}
       <style>{`html{scroll-behavior:smooth}`}</style>
 
+      {/* Toast notification container (top-right) */}
       <Toaster
         position="top-right"
         reverseOrder={false}
@@ -82,14 +108,21 @@ function App() {
           },
         }}
       />
+      {/* App root container with starfield background */}
       <div id="top" className="bg-black text-white min-h-screen relative overflow-hidden">
+        {/* Starfield canvas (behind content) */}
         <ShootingStars zIndex={0} />
+        {/* Top navigation bar */}
         <Navbar />
+        {/* Main content area */}
         <main className="pt-24 pb-0 relative z-10">
           {/* Hero Section */}
           <section className="min-h-[calc(100vh-6rem)] flex flex-col md:flex-row items-center justify-center px-4 gap-10">
+            {/* Left: Headline and CTA buttons */}
             <div className="text-center md:text-left">
+              {/* Name */}
               <h1 className="text-5xl md:text-6xl font-extrabold">Aleksa Vučak</h1>
+              {/* Rotating typewriter headline */}
               <h2 className="mt-4 text-lg md:text-xl text-indigo-400 tracking-widest font-medium uppercase">
                 <Typewriter
                   words={[
@@ -109,20 +142,26 @@ function App() {
                   delaySpeed={2000}
                 />
               </h2>
+              {/* CTA Buttons: Resume, GitHub, LinkedIn */}
               <div className="mt-6 space-y-3 flex flex-col items-center md:items-start">
+              {/* Open resume in a new tab without changing SPA URL */}
               <a
                 href={resumePdf}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
                 onClick={(e) => {
+                  // Prevent default anchor navigation to keep SPA URL unchanged
                   e.preventDefault();
+                  // Explicitly open the PDF in a new tab
                   window.open(resumePdf, '_blank', 'noopener,noreferrer');
                 }}
               >
+                {/* Resume button label and icon */}
                 Resume <FaFileAlt className="text-xl" />
               </a>
 
+              {/* GitHub profile link */}
               <a
                 href="https://github.com/AleksaVucak"
                 target="_blank"
@@ -132,6 +171,7 @@ function App() {
                 GitHub <FaGithub className="text-xl" />
               </a>
 
+              {/* LinkedIn profile link */}
               <a
                 href="https://www.linkedin.com/in/aleksa-vucak-587923298"
                 target="_blank"
@@ -142,6 +182,7 @@ function App() {
               </a>
               </div>
             </div>
+            {/* Right: Hero image */}
             <div className="w-full max-w-sm">
               <img src={ActionFigure} alt="Action Figure" className="rounded-2xl w-full object-contain" />
             </div>
@@ -149,23 +190,30 @@ function App() {
 
           {/* 3D Model Section */}
           <section className="relative w-full h-[300px] md:h-[500px] overflow-hidden">
+            {/* Blended background blob image */}
             <img
               src={BlobBackground}
               alt="Blob"
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[1750px] max-w-none opacity-100 pointer-events-none mix-blend-screen"
             />
+            {/* R3F canvas containing the DesktopModel */}
             <Canvas dpr={[1, 1.5]} camera={{ position: [0, 1, 5], fov: 50 }}>
+              {/* Ambient light for base illumination */}
               <ambientLight intensity={5} />
+              {/* Directional light for highlights/shadows */}
               <directionalLight position={[2, 6, 2]} intensity={2} />
+              {/* Lazy-load the 3D model */}
               <Suspense fallback={null}>
                 <DesktopModel />
               </Suspense>
+              {/* Orbit controls (rotate only, no zoom) */}
               <OrbitControls enableZoom={false} />
             </Canvas>
           </section>
 
           {/* Work Experience Section */}
           <section id="experience" className="py-14 px-4 bg-transparent scroll-mt-2 md:scroll-mt-6">
+            {/* Section header */}
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Work Experience</h2>
               <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
@@ -277,7 +325,7 @@ function App() {
 
             {/* ===== Desktop (alternating) timeline ===== */}
             <div className="relative w-full max-w-4xl mx-auto h-[1600px] hidden md:block">
-              {/* control line tails with top/bottom percentages */}
+              {/* Vertical center line */}
               <div className="absolute left-1/2 -translate-x-1/2 top-[2%] bottom-[2%] w-1 bg-white"></div>
 
               {/* 1) City of Windsor — LEFT (top 12%) */}
@@ -419,6 +467,7 @@ function App() {
 
           {/* Projects Section */}
           <section id="projects" className="py-14 px-4 bg-transparent scroll-mt-6 md:scroll-mt-10 -mt-6 md:-mt-10">
+            {/* Section header */}
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Projects</h2>
               <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">
@@ -426,13 +475,14 @@ function App() {
               </p>
             </div>
 
-            {/* First Row */}
+            {/* First Row: render first 4 projects */}
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
               {projects.slice(0, 4).map((project, index) => (
                 <div
                   key={index}
                   className="w-full sm:w-72 bg-white text-black rounded-2xl overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-[0_0_20px_4px_white]"
                 >
+                  {/* Show placeholder if coming soon, else thumbnail */}
                   {project.comingSoon ? (
                     <div className="h-40 w-full bg-gray-200 text-black flex items-center justify-center font-bold text-xl">
                       Coming Soon
@@ -440,6 +490,7 @@ function App() {
                   ) : (
                     <img src={project.image} alt={project.name} className="h-40 w-full object-cover" />
                   )}
+                  {/* Card footer with name and external link */}
                   <div className="flex items-center justify-between px-4 py-3 bg-indigo-400 text-black">
                     <h3 className="text-base font-bold">{project.name}</h3>
                     <a href={project.link} target="_blank" rel="noopener noreferrer">
@@ -450,13 +501,14 @@ function App() {
               ))}
             </div>
 
-            {/* Second Row (centered) */}
+            {/* Second Row (centered): remaining projects */}
             <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-8">
               {projects.slice(4).map((project, index) => (
                 <div
                   key={index}
                   className="w-full sm:w-72 bg-white text-black rounded-2xl overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-[0_0_20px_4px_white]"
                 >
+                  {/* Show placeholder if coming soon, else thumbnail */}
                   {project.comingSoon ? (
                     <div className="h-40 w-full bg-gray-200 text-black flex items-center justify-center font-bold text-xl">
                       Coming Soon!
@@ -464,6 +516,7 @@ function App() {
                   ) : (
                     <img src={project.image} alt={project.name} className="h-40 w-full object-cover" />
                   )}
+                  {/* Card footer with name and external link */}
                   <div className="flex items-center justify-between px-4 py-3 bg-indigo-400 text-black">
                     <h3 className="text-base font-bold">{project.name}</h3>
                     <a href={project.link} target="_blank" rel="noopener noreferrer">
@@ -477,6 +530,7 @@ function App() {
 
           {/* Skills Section */}
           <section id="skills" className="py-14 px-4 bg-transparent text-white scroll-mt-6 md:scroll-mt-10">
+            {/* Section header */}
             <div className="max-w-5xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white">Skills</h2>
               <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">MY TECH STACK.</p>
@@ -576,15 +630,17 @@ function App() {
           {/* Contact Me Section */}
           <section id="contact" className="pt-14 pb-0 md:pb-1 px-4 bg-transparent text_white scroll-mt-2 md:scroll-mt-6 -mb-8">
             <div className="max-w-7xl mx-auto">
+              {/* Section header */}
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-6xl font-extrabold text-white">Contact Me</h2>
                 <p className="mt-2 text-sm md:text-base text-indigo-400 tracking-widest uppercase font-semibold">I'm all ears.</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                {/* Left: Form */}
+                {/* Left: Contact form wired to EmailJS */}
                 <form ref={form} onSubmit={sendEmail} className="space-y-6">
                   <div className="flex flex-col md:flex-row gap-6">
+                    {/* Name input */}
                     <input
                       type="text"
                       name="name"
@@ -592,6 +648,7 @@ function App() {
                       required
                       className="w-full md:w-1/2 p-4 bg-[#111] text_white rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     />
+                    {/* Email input */}
                     <input
                       type="email"
                       name="email"
@@ -602,6 +659,7 @@ function App() {
                   </div>
 
                   <div className="flex flex-col gap-6">
+                    {/* Message textarea */}
                     <textarea
                       rows="15"
                       name="message"
@@ -609,6 +667,7 @@ function App() {
                       required
                       className="w-full p-4 bg-[#111] text_white rounded-xl border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
                     />
+                    {/* Submit button */}
                     <button
                       type="submit"
                       className="w-fit bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl hover:bg-indigo-600 transition-all"
@@ -618,11 +677,15 @@ function App() {
                   </div>
                 </form>
 
-                {/* Right: Model */}
+                {/* Right: 3D Globe model */}
                 <div className="w-full h-[600px]">
+                  {/* R3F canvas with ambient light; model is lazy-loaded */}
                   <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 2.5], fov: 45 }}>
+                    {/* Ambient lighting for the globe */}
                     <ambientLight intensity={0.7} />
+                    {/* Directional light disabled (intensity 0) */}
                     <directionalLight position={[2, 2, 5]} intensity={0} />
+                    {/* Lazy-load globe model with small scale and y-offset */}
                     <Suspense fallback={null}>
                       <GlobeModel scale={0.015} position={[0, 0.175, 0]} />
                     </Suspense>
@@ -637,4 +700,5 @@ function App() {
   );
 }
 
+// Export the App component as default
 export default App;
