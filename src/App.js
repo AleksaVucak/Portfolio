@@ -220,9 +220,9 @@ function App() {
                       <h3 className="text-lg font-bold">Facility Attendant</h3>
                       <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • ON-SITE</p>
                       <ul className="list-disc list-inside text-sm mt-3 space-y-1">
-                        <li>TBD</li>
-                        <li>TBD</li>
-                        <li>TBD</li>
+                        <li>Operate front desk with ActiveNet, processing 150–250 check-ins per day while handling registrations, bookings, payments, and accurate cash closure</li>
+                        <li>Prepare and reset spaces for programs and rentals, completing 4–8 room turnovers per shift to keep schedules on time</li>
+                        <li>Monitor facility safety and customer experience through scheduled walkthroughs, policy enforcement, incident response, and clear documentation and handoffs</li>
                       </ul>
                     </div>
                   </div>
