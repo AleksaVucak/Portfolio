@@ -318,13 +318,14 @@ function App() {
                       <p className="text-sm font-medium mt-1 uppercase">WINDSOR, ON • HYBRID</p>
                       <ul className="list-disc list-inside text-sm mt-3 space-y-1">
                         <li>
-                          TBD
+                        Lead a 33-student weekly COMP-2560 Systems Programming lab, teaching C and Unix fundamentals and guiding
+                        debugging of processes, pipes, sockets, file I/O, and memory management through structured live demonstrations
                         </li>
                         <li>
-                          TBD
+                        Host weekly office hours, resolving student questions through targeted code reviews, step-by-step walkthroughs, and clear follow-ups
                         </li>
                         <li>
-                          TBD
+                        Grade all labs, assignments, and exams with consistent rubric-based feedback, returning marks within 72 hours
                         </li>
                       </ul>
                     </div>
