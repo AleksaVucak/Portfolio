@@ -1,105 +1,182 @@
 <!DOCTYPE html>
+<!-- Root element with language attribute set to English for accessibility and SEO -->
 <html lang="en">
 <head>
+  <!-- Character encoding set to UTF-8 to support most characters -->
   <meta charset="UTF-8" />
+  <!-- The page title shown in browser tabs and used by search engines -->
   <title>404 Not Found</title>
+  <!-- Embedded CSS styles for layout and visuals -->
   <style>
+    /* Reset margins/padding and ensure the root takes the full viewport */
     html, body {
+      /* Remove default browser spacing */
       margin: 0; padding: 0;
+      /* Make elements expand to the full viewport size */
       width: 100%; height: 100%;
+      /* Set a solid black background as the canvas backdrop */
       background: black;
+      /* Hide scrollbars; the animation is purely decorative */
       overflow: hidden;
     }
+    /* Fullscreen canvas painted behind the content */
     canvas {
+      /* Keep the canvas fixed relative to the viewport */
       position: fixed;
+      /* Pin to top-left corner */
       top: 0; left: 0;
+      /* Stretch to cover the entire viewport */
       width: 100%; height: 100%;
-      z-index: 0;           /* bring canvas into the page */
+      /* Place behind other elements so text overlays the stars */
+      z-index: 0;          
+      /* Prevent the canvas from intercepting pointer events */
       pointer-events: none;
     }
+    /* Foreground container that holds the 404 message */
     .content {
-      position: relative;   /* create new stacking context */
-      z-index: 1;           /* text sits on top of canvas */
+      /* Position relative so z-index applies */
+      position: relative;   
+      /* Ensure it sits above the canvas */
+      z-index: 1;           
+      /* Use flexbox to center content */
       display: flex;
+      /* Stack elements vertically */
       flex-direction: column;
+      /* Center items both horizontally and vertically */
       justify-content: center;
       align-items: center;
+      /* Fill the viewport */
       width: 100%; height: 100%;
+      /* White text for contrast on black background */
       color: white;
+      /* Font family preference (Poppins if available, else sans-serif) */
       font-family: 'Poppins', sans-serif;
     }
+    /* Large, prominent 404 header styling */
     .content h1 {
+      /* Oversized type to emphasize the error code */
       font-size: 8rem;
+      /* Indigo accent color matching many modern UI palettes */
       color: #6366f1;
+      /* Remove default margins for tighter layout */
       margin: 0;
     }
+    /* Subtitle/paragraph styling under the header (not used here but ready) */
     .content p {
+      /* Readable subtitle size */
       font-size: 2rem;
+      /* Add spacing above the paragraph */
       margin-top: 20px;
     }
+    /* Link styling for any navigation back to home, etc. (not used here but ready) */
     .content a {
+      /* Match the accent color for links */
       color: #6366f1;
+      /* Remove underline for a cleaner look */
       text-decoration: none;
     }
   </style>
 </head>
 <body>
+  <!-- The drawing surface for the shooting star animation -->
   <canvas id="shooting-stars"></canvas>
+  <!-- Foreground container that overlays the canvas -->
   <div class="content">
+    <!-- The main 404 error code displayed to the user -->
     <h1>404</h1>
   </div>
 
+  <!-- Inline script to render the shooting star animation -->
   <script>
+    // Reference to the canvas element used for drawing
     const canvas = document.getElementById('shooting-stars');
+    // 2D rendering context for drawing lines and shapes
     const ctx = canvas.getContext('2d');
+    // Track current canvas width and height (sync with window size)
     let width, height;
 
+    // Adjust canvas pixel dimensions to match the window size
     function resizeCanvas() {
+      // Read the current viewport width
       width = window.innerWidth;
+      // Read the current viewport height
       height = window.innerHeight;
+      // Set the canvas internal drawing buffer width
       canvas.width = width;
+      // Set the canvas internal drawing buffer height
       canvas.height = height;
     }
+    // Initialize canvas size on first load
     resizeCanvas();
+    // Update canvas size on window resize to stay full-screen
     window.addEventListener('resize', resizeCanvas);
 
+    // Array holding all active shooting stars
     const stars = [];
+    // Factory function that creates a new star with random properties
     function createStar() {
+      // Randomly decide whether the star starts from the left edge
       const fromLeft = Math.random() < 0.5;
+      // Return a star object with randomized properties
       return {
+        // Start at x=0 if fromLeft, else anywhere across the width
         x: fromLeft ? 0 : Math.random() * width,
+        // Start at a random y if fromLeft, else at top edge (y=0)
         y: fromLeft ? Math.random() * height : 0,
+        // Star trail length between 50 and 130 pixels
         length: Math.random() * 80 + 50,
+        // Star speed between 4 and 10 pixels per frame
         speed: Math.random() * 6 + 4,
+        // Fixed 45° angle (down-right) for a diagonal trajectory
         angle: Math.PI / 4,
+        // Random opacity between 0.5 and 1.0 for variety
         alpha: Math.random() * 0.5 + 0.5,
       };
     }
+    // Seed the scene with 50 stars to animate
     for (let i = 0; i < 50; i++) stars.push(createStar());
 
+    // Main render loop that updates and draws all stars each frame
     function draw() {
+      // Clear the entire canvas to prepare for the next frame
       ctx.clearRect(0, 0, width, height);
+      // Save current drawing state (so we can restore after glow settings)
       ctx.save();
+      // Add a subtle glow around lines for a star-like effect
       ctx.shadowBlur = 8;
+      // White glow color to match star color
       ctx.shadowColor = 'white';
+      // Draw stars as white lines (their trails)
       ctx.strokeStyle = 'white';
+      // Slightly thick line width to keep trails visible on high-DPI screens
       ctx.lineWidth = 3;
+      // Iterate over each star and draw/update it
       for (let s of stars) {
+        // Apply the star's individual transparency
         ctx.globalAlpha = s.alpha;
+        // Begin a new path for the star trail
         ctx.beginPath();
+        // Starting point of the trail (current star position)
         ctx.moveTo(s.x, s.y);
+        // Draw a line backward from the current position to create a trail
         ctx.lineTo(
           s.x - s.length * Math.cos(s.angle),
           s.y - s.length * Math.sin(s.angle)
         );
+        // Render the trail to the canvas
         ctx.stroke();
+        // Move the star forward along the diagonal trajectory
         s.x += s.speed;
         s.y += s.speed;
+        // If the star exits the canvas, recycle it with new random properties
         if (s.x > width || s.y > height) Object.assign(s, createStar());
       }
+      // Restore the previous drawing state (remove glow for other drawings)
       ctx.restore();
+      // Schedule the next frame; keeps the animation running
       requestAnimationFrame(draw);
     }
+    // Kick off the animation loop
     draw();
   </script>
 </body>
