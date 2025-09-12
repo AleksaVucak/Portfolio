@@ -105,24 +105,32 @@ function App() {
                 />
               </h2>
               <div className="mt-6 space-y-3 flex flex-col items-center md:items-start">
-                <a
-                  href="/resume.pdf"
-                  className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
-                >
-                  Resume <FaFileAlt className="text-xl" />
-                </a>
-                <a
-                  href="https://github.com/AleksaVucak"
-                  className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
-                >
-                  GitHub <FaGithub className="text-xl" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/aleksa-vucak-587923298"
-                  className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
-                >
-                  LinkedIn <FaLinkedin className="text-xl" />
-                </a>
+              <a
+                href="/AleksaVucak_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
+              >
+                Resume <FaFileAlt className="text-xl" />
+              </a>
+
+              <a
+                href="https://github.com/AleksaVucak"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
+              >
+                GitHub <FaGithub className="text-xl" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/aleksa-vucak-587923298"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-indigo-400 hover:text-white transition-all"
+              >
+                LinkedIn <FaLinkedin className="text-xl" />
+              </a>
               </div>
             </div>
             <div className="w-full max-w-sm">
