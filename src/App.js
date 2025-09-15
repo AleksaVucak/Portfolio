@@ -11,7 +11,7 @@ import emailjs from '@emailjs/browser';
 import './index.css';
 
 // Import the resume PDF asset (served by bundler)
-import resumePdf from './assets/Aleksa_Vucak_Resume.pdf';
+import resumePdf from './assets/AleksaVucak_Resume.pdf';
 
 // Import hero and logo/image assets used across sections
 import ActionFigure from './images/ActionFigure3.png';
