@@ -2,7 +2,7 @@
 
 A modern, animated developer portfolio built with **React**, **Tailwind CSS**, and **React Three Fiber**. It features a canvas starfield background, interactive 3D models, a responsive timeline with flip-cards, a projects gallery, a tilt-animated skills grid, and an EmailJS-powered contact form with toast notifications.
 
-> **Live Demo:** TBD
+> **Live Demo:** aleksavucak.com
 
 ---
 
