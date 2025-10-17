@@ -45,6 +45,9 @@ import GlobeModel from './GlobeModel';
 import { Typewriter } from 'react-simple-typewriter';
 import { Toaster, toast } from 'react-hot-toast';
 
+// Analytics import
+import { Analytics } from '@vercel/analytics/react';
+
 // Main application component
 function App() {
   // Ref to the contact form element for EmailJS
@@ -696,6 +699,7 @@ function App() {
           </section>
         </main>
       </div>
+      <Analytics />
     </>
   );
 }
