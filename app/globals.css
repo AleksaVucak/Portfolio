@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components {
+  .glass-pill {
+    @apply rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-2xl;
+  }
+}
