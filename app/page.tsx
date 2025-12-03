@@ -85,13 +85,13 @@ export default function HomePage() {
           className="border-t border-white/10 px-4 py-16 sm:px-6"
         >
           <div className="mx-auto w-full max-w-5xl">
-            <div className="mb-8 space-y-2">
+            {/* centered heading + shorter subtitle */}
+            <div className="mb-8 space-y-2 text-center">
               <h2 className="text-xl font-semibold sm:text-2xl">
                 Work Experience
               </h2>
-              <p className="text-sm text-white/60 sm:text-base">
-                From teaching systems to building production ML tools — most
-                recent experience at the top.
+              <p className="mx-auto max-w-xl text-sm text-white/60 sm:text-base">
+              My track record across academia and industry.
               </p>
             </div>
 
@@ -105,7 +105,7 @@ export default function HomePage() {
                     {/* UWindsor logo */}
                     <div className="relative h-10 w-10 rounded-xl bg-white">
                       <Image
-                        src="/uow.png"   // <-- change if your filename is different
+                        src="/uow.png"
                         alt="University of Windsor logo"
                         fill
                         className="object-contain"
@@ -116,11 +116,11 @@ export default function HomePage() {
                         Undergraduate Teaching Assistant
                       </h3>
                       <p className="text-xs text-white/60 sm:text-sm">
-                        University of Windsor · Systems Programming &amp; CS Core
+                        University of Windsor · School of Computer Science
                       </p>
                     </div>
                     <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70">
-                      Multi-term
+                      September 2025 - Present
                     </span>
                   </div>
                   <ul className="mt-3 space-y-1.5 text-xs text-white/70 sm:text-sm">
@@ -134,16 +134,16 @@ export default function HomePage() {
               {/* Stellantis – middle */}
               <li className="relative">
                 {/* timeline dot – blue */}
-                <span className="absolute -left-[9px] top-3 h-4 w-4 rounded-full bg-sky-400 ring-4 ring-black" />
+                <span className="absolute -left-[9px] top-3 h-4 w-4 rounded-full ring-4 ring-black" style={{ backgroundColor: "#243882" }} />
                 <article className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                   <div className="flex items-center justify-between gap-4">
                     {/* Stellantis logo */}
                     <div className="relative h-10 w-10 rounded-xl bg-white">
                       <Image
-                        src="/stellantis.png"  // <-- change to your actual filename
+                        src="/stellantis.png"
                         alt="Stellantis logo"
                         fill
-                        className="object-contain scale-140"
+                        className="object-contain scale-150"
                       />
                     </div>
                     <div className="flex-1">
@@ -155,7 +155,7 @@ export default function HomePage() {
                       </p>
                     </div>
                     <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70">
-                      2025 – 2026
+                      April 2025 - August 2025
                     </span>
                   </div>
                   <ul className="mt-3 space-y-1.5 text-xs text-white/70 sm:text-sm">
@@ -172,13 +172,13 @@ export default function HomePage() {
               {/* Glendor – bottom (oldest) */}
               <li className="relative">
                 {/* timeline dot – green */}
-                <span className="absolute -left-[9px] top-3 h-4 w-4 rounded-full bg-emerald-400 ring-4 ring-black" />
+                <span className="absolute -left-[9px] top-3 h-4 w-4 rounded-full bg-[#1fa985] ring-4 ring-black" />
                 <article className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                   <div className="flex items-center justify-between gap-4">
                     {/* Glendor logo */}
                     <div className="relative h-10 w-10 rounded-xl bg-white">
                       <Image
-                        src="/glendor.svg"  // <-- change if needed
+                        src="/glendor.svg"
                         alt="Glendor logo"
                         fill
                         className="object-contain"
@@ -193,13 +193,14 @@ export default function HomePage() {
                       </p>
                     </div>
                     <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70">
-                      2024 – 2025
+                      September 2024 - December 2024
                     </span>
                   </div>
                   <ul className="mt-3 space-y-1.5 text-xs text-white/70 sm:text-sm">
                     <li>• De-identification of PHI in CT/MRI data.</li>
                     <li>
-                      • Blur-detection & anonymization pipelines using CV models.
+                      • Blur-detection & anonymization pipelines using CV
+                      models.
                     </li>
                     <li>• Contributing toward publication-ready research.</li>
                   </ul>
@@ -214,15 +215,8 @@ export default function HomePage() {
           id="projects"
           className="border-t border-white/10 px-4 py-16 sm:px-6"
         >
-          <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-6 text-center">
-            <div className="space-y-2">
-              <h2 className="text-xl font-semibold sm:text-2xl">Projects</h2>
-              <p className="text-sm text-white/60 sm:text-base">
-                A proper project gallery is on the way.
-              </p>
-            </div>
-
-            {/* Caution tape block */}
+          <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+            {/* Caution tape block only */}
             <div className="relative mt-2 w-full max-w-3xl overflow-hidden rounded-2xl border border-yellow-400/80 bg-black/70 text-sm sm:text-base">
               {/* stripes */}
               <div
@@ -233,18 +227,12 @@ export default function HomePage() {
                 }}
               />
               {/* content on top */}
-              <div className="relative flex flex-col items-center gap-2 px-6 py-8 sm:flex-row sm:justify-between">
-                <span className="text-xl sm:text-2xl">🚧 Coming soon</span>
+              <div className="relative flex items-center justify-center px-6 py-8">
                 <span className="rounded-full bg-black/80 px-4 py-1 text-xs font-semibold tracking-wide text-yellow-300 sm:text-sm">
                   PROJECT GALLERY UNDER CONSTRUCTION
                 </span>
               </div>
             </div>
-
-            <p className="text-xs text-white/50 sm:text-sm">
-              I&apos;m currently rebuilding this section with my favourite
-              shipped tools, research, and side projects.
-            </p>
           </div>
         </section>
       </div>
