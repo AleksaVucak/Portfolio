@@ -63,7 +63,7 @@ export default function HomePage() {
             {/* Right: updated status */}
             <div className="hidden flex-1 items-center justify-end gap-2 text-[11px] text-white/50 sm:flex">
               <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
-              <span>Updated 12/03/25</span>
+              <span>Updated 12/03/2025</span>
             </div>
           </div>
         </header>
@@ -184,6 +184,12 @@ export default function HomePage() {
                     <span>LinkedIn</span>
                   </a>
                 </div>
+              </div>
+
+              {/* Mobile updated status under buttons */}
+              <div className="mt-3 flex items-center justify-center gap-2 text-[11px] text-white/50 sm:hidden">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
+                <span>Updated 12/03/2025</span>
               </div>
             </div>
           </div>
