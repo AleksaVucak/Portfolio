@@ -65,15 +65,14 @@ export default function HomePage() {
             {/* Name + tagline */}
             <div className="space-y-3">
               <p className="text-xs uppercase tracking-[0.25em] text-white/50">
-                SOFTWARE ENGINEER · AI/ML/RL
+                SOFTWARE ENGINEERING STUDENT
               </p>
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-                Aleksa Vucak
+                Aleksa Vučak
               </h1>
               <p className="max-w-xl text-sm text-white/70 sm:text-base">
-                AI &amp; software engineer focused on building useful tools,
-                teaching systems programming, and shipping projects that
-                actually get used.
+              I’m someone who likes owning the full pipeline: design it, build it, and ship it. Most of 
+              my work lives where data, infrastructure, and product intersect. 
               </p>
             </div>
           </div>
