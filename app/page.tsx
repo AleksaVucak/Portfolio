@@ -237,7 +237,7 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                  Led system programming labs in C and Unix for 33 students, demoing 
+                  Led system programming labs in C and Unix for 30+ students, demoing 
                   processes/pipes/sockets and teaching gcc, gdb, and Linux tooling while providing 
                   rubric-based grading with a typical turnaround under 72 hours.
                   </p>
