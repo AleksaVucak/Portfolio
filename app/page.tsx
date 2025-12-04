@@ -237,12 +237,9 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                    Led a 33-student weekly systems programming lab in C and
-                    Unix for COMP 2560, running live demos on processes, pipes,
-                    sockets, and memory management while instructing students on
-                    gcc, gdb, and Linux tooling. Marked labs, assignments, and
-                    exams with rubric-based feedback and a typical turnaround of
-                    under 72 hours.
+                  Led COMP-2560 systems programming labs in C and Unix for 33 students, demoing 
+                  processes/pipes/sockets and teaching gcc, gdb, and Linux tooling while providing 
+                  rubric-based grading with a typical turnaround under 72 hours.
                   </p>
                 </article>
               </li>
@@ -278,16 +275,10 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                    Built an end-to-end battery fault-detection system over EV
-                    BMS logs that windows time-series data, extracts voltage
-                    sag, SOC, and thermal features, and applies
-                    supervised/unsupervised models in Python (pandas, NumPy,
-                    scikit-learn, XGBoost) to raise precision at a fixed recall
-                    by 21% on tested cells and packs. Added SOC-aware
-                    calibration policies and automated experiment reports with
-                    feature attributions and risk bands, reducing false
-                    positives by ~32% and cutting manual triage time per log by
-                    about 60% for the battery safety team.
+                  Developed an end-to-end battery fault-detection pipeline over EV BMS logs using Python, 
+                  pandas, NumPy, scikit-learn, and tree-based gradient-boosting models to engineer 
+                  time-series features and automatically flag risky cells and packs, improving 
+                  fault-flagging precision at fixed recall by ~21%.                 
                   </p>
                 </article>
               </li>
@@ -323,13 +314,9 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                    Applied blur application and detection algorithms to 2,000+
-                    medical images and video frames using Python, OpenCV, and CV
-                    models, reaching ~92% F1 on PHI redaction while preserving
-                    diagnostic context. Automated structured output folders,
-                    metrics logs, and comparison reports that removed 99% of the
-                    manual file-handling work and helped a 7-person team plug
-                    de-identification into real-time healthcare workflows.
+                  Built a Python/OpenCV pipeline to detect and blur PHI in 2000+ medical images and 
+                  video frames, tuning CV models and automating reports to reach ~92% F1 while 
+                  eliminating ~99% of the manual file-handling work.
                   </p>
                 </article>
               </li>
