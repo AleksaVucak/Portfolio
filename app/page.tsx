@@ -1,46 +1,63 @@
 "use client";
 
 import Image from "next/image";
-
-const navItems = [
-  { label: "AV", href: "#top" },
-  { label: "Work Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-];
+import type { MouseEvent } from "react";
 
 export default function HomePage() {
+  const handleSmoothScroll = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    event.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <main
       id="top"
-      className="relative min-h-screen overflow-hidden bg-black text-white transition-colors duration-500"
+      className="relative min-h-screen overflow-hidden bg-black text-white transition-colors duration-500 pt-16"
     >
       <div className="relative z-10">
         {/* NAVBAR */}
-        <header className="sticky top-0 z-20 border-b border-white/10 bg-black/60 px-4 py-3 backdrop-blur-2xl sm:px-8">
-          <div className="mx-auto flex max-w-5xl items-center justify-between">
-            {/* Left: AV chip */}
-            <a
-              href="#top"
-              className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-medium text-white/90 shadow-[0_0_25px_rgba(255,255,255,0.35)] backdrop-blur-3xl"
-            >
-              <span className="flex h-7 w-7 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-emerald-400 text-sm font-semibold text-slate-950">
+        <header className="fixed top-4 left-0 right-0 z-20 px-4 sm:px-8">
+          <div className="mx-auto flex max-w-5xl items-center rounded-3xl border border-white/10 bg-black/80 px-4 py-2.5 shadow-[0_18px_45px_rgba(0,0,0,0.85)] backdrop-blur-2xl">
+            {/* Left: AV logo */}
+            <div className="flex flex-1">
+              <a
+                href="#top"
+                onClick={(e) => handleSmoothScroll(e, "#top")}
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-sky-400 to-emerald-400 text-xs font-semibold text-slate-950 shadow-[0_0_26px_rgba(56,189,248,0.6)]"
+              >
                 AV
-              </span>
-              <span className="hidden sm:inline">Aleksa Vucak</span>
-            </a>
+              </a>
+            </div>
 
-            {/* Middle: nav links */}
-            <nav className="hidden items-center gap-2 text-xs sm:flex sm:text-sm">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 font-medium text-white/80 backdrop-blur-2xl transition hover:bg-white/15 hover:text-white"
-                >
-                  {item.label}
-                </a>
-              ))}
+            {/* Center: nav buttons */}
+            <nav className="flex items-center gap-1 rounded-full bg-white/5 px-1.5 py-1 text-xs sm:text-sm">
+              <a
+                href="#experience"
+                onClick={(e) => handleSmoothScroll(e, "#experience")}
+                className="rounded-full px-4 py-1.5 font-medium text-white/85 transition hover:bg-white/10 hover:text-white"
+              >
+                Work Experience
+              </a>
+              <a
+                href="#projects"
+                onClick={(e) => handleSmoothScroll(e, "#projects")}
+                className="rounded-full px-4 py-1.5 font-medium text-white/75 transition hover:bg-white/10 hover:text-white"
+              >
+                Projects
+              </a>
             </nav>
+
+            {/* Right: updated status */}
+            <div className="hidden flex-1 items-center justify-end gap-2 text-[11px] text-white/50 sm:flex">
+              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              <span>Updated 12/03/25</span>
+            </div>
           </div>
         </header>
 
@@ -56,7 +73,7 @@ export default function HomePage() {
                     src="/me2.jpg"
                     alt="Aleksa Vucak"
                     fill
-                    className="object-cover object-[55%_50%]"
+                    className="object-cover object-[54%_50%]"
                   />
                 </div>
               </div>
@@ -71,8 +88,9 @@ export default function HomePage() {
                 Aleksa Vučak
               </h1>
               <p className="max-w-xl text-sm text-white/70 sm:text-base">
-              I’m someone who likes owning the full pipeline: design it, build it, and ship it. Most of 
-              my work lives where data, infrastructure, and product intersect. 
+                I’m someone who likes owning the full pipeline: design it, build
+                it, and ship it. Most of my work lives where data,
+                infrastructure, and product intersect.
               </p>
             </div>
           </div>
@@ -123,10 +141,12 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs text-white/70 sm:text-sm">
-                  Led a 33-student weekly systems programming lab in C and Unix for COMP 2560, running 
-                  live demos on processes, pipes, sockets, and memory management while instructing students 
-                  on gcc, gdb, and Linux tooling. Marked labs, assignments, and exams with rubric-based 
-                  feedback and a typical turnaround of under 72 hours.
+                    Led a 33-student weekly systems programming lab in C and
+                    Unix for COMP 2560, running live demos on processes, pipes,
+                    sockets, and memory management while instructing students on
+                    gcc, gdb, and Linux tooling. Marked labs, assignments, and
+                    exams with rubric-based feedback and a typical turnaround of
+                    under 72 hours.
                   </p>
                 </article>
               </li>
@@ -159,13 +179,16 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs text-white/70 sm:text-sm">
-                  Built an end-to-end battery fault-detection system over EV BMS logs that windows time-series data, 
-                  extracts voltage sag, SOC, and thermal features, and applies supervised/unsupervised 
-                  models in Python (pandas, NumPy, scikit-learn, XGBoost) to raise precision at a fixed 
-                  recall by 21% on tested cells and packs. Added SOC-aware calibration policies and 
-                  automated experiment reports with feature attributions and risk bands, reducing false
-                  positives by ~32% and cutting manual triage time per log by about 60% for the battery 
-                  safety team.
+                    Built an end-to-end battery fault-detection system over EV
+                    BMS logs that windows time-series data, extracts voltage
+                    sag, SOC, and thermal features, and applies
+                    supervised/unsupervised models in Python (pandas, NumPy,
+                    scikit-learn, XGBoost) to raise precision at a fixed recall
+                    by 21% on tested cells and packs. Added SOC-aware
+                    calibration policies and automated experiment reports with
+                    feature attributions and risk bands, reducing false
+                    positives by ~32% and cutting manual triage time per log by
+                    about 60% for the battery safety team.
                   </p>
                 </article>
               </li>
@@ -198,11 +221,13 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs text-white/70 sm:text-sm">
-                  Applied blur application and detection algorithms to 2,000+ medical images and video 
-                  frames using Python, OpenCV, and CV models, reaching ~92% F1 on PHI redaction while 
-                  preserving diagnostic context. Automated structured output folders, metrics logs, and 
-                  comparison reports that removed 99% of the manual file-handling work and helped a 
-                  7-person team plug de-identification into real-time healthcare workflows.
+                    Applied blur application and detection algorithms to 2,000+
+                    medical images and video frames using Python, OpenCV, and CV
+                    models, reaching ~92% F1 on PHI redaction while preserving
+                    diagnostic context. Automated structured output folders,
+                    metrics logs, and comparison reports that removed 99% of the
+                    manual file-handling work and helped a 7-person team plug
+                    de-identification into real-time healthcare workflows.
                   </p>
                 </article>
               </li>
