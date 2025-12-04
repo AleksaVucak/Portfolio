@@ -66,7 +66,7 @@ export default function HomePage() {
           <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-6 text-center">
             {/* Circular image with local blue glow */}
             <div className="relative">
-              <div className="absolute inset-0 blur-3xl bg-sky-500/35" />
+              <div className="absolute inset-0 bg-sky-500/35 blur-3xl" />
               <div className="relative rounded-full border border-white/20 bg-white/10 p-[3px] shadow-[0_0_60px_rgba(56,189,248,0.7)]">
                 <div className="relative h-40 w-40 overflow-hidden rounded-full sm:h-48 sm:w-48">
                   <Image
@@ -80,7 +80,7 @@ export default function HomePage() {
             </div>
 
             {/* Name + tagline */}
-            <div className="space-y-3">
+            <div className="space-y-4">
               <p className="text-xs uppercase tracking-[0.25em] text-white/50">
                 SOFTWARE ENGINEERING STUDENT
               </p>
@@ -92,6 +92,90 @@ export default function HomePage() {
                 it, and ship it. Most of my work lives where data,
                 infrastructure, and product intersect.
               </p>
+
+              {/* CTA buttons – conjoined pill with icons + labels */}
+              <div className="mt-4 flex justify-center">
+                <div className="inline-flex items-center gap-1 rounded-full bg-white/5 px-1.5 py-1.5 text-xs sm:text-sm">
+                  {/* Resume – now same style as other buttons */}
+                  <a
+                    href="/Aleksa_Vucak_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/0 px-4 py-1.5 font-semibold text-white/90 backdrop-blur-2xl transition hover:bg-white/10 hover:text-white"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                    >
+                      <path
+                        d="M7 3h7l5 5v13H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"
+                        fill="currentColor"
+                        opacity="0.9"
+                      />
+                      <path
+                        d="M14 3v4a1 1 0 0 0 1 1h4"
+                        fill="none"
+                        stroke="black"
+                        strokeWidth="1.3"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    <span>Resume</span>
+                  </a>
+
+                  {/* GitHub */}
+                  <a
+                    href="https://github.com/AleksaVucak"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/0 px-4 py-1.5 font-medium text-white/80 backdrop-blur-2xl transition hover:bg-white/10 hover:text-white"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                    >
+                      <path
+                        d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.5.46-3.17-.61-3.37-1.17-.11-.28-.6-1.17-1.02-1.4-.35-.19-.85-.66-.01-.67.79-.01 1.35.73 1.54 1.03.9 1.52 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.38 9.38 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.9-1.3 2.74-1.02 2.74-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.86 0 1.34-.01 2.42-.01 2.75 0 .26.18.58.69.48A10 10 0 0 0 12 2z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>GitHub</span>
+                  </a>
+
+                  {/* LinkedIn */}
+                  <a
+                    href="https://www.linkedin.com/in/aleksa-vucak-587923298/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/0 px-4 py-1.5 font-medium text-white/80 backdrop-blur-2xl transition hover:bg-white/10 hover:text-white"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                    >
+                      <rect
+                        x="3"
+                        y="3"
+                        width="18"
+                        height="18"
+                        rx="3"
+                        ry="3"
+                        fill="currentColor"
+                      />
+                      <rect x="6.5" y="9" width="2.3" height="7.5" fill="black" />
+                      <circle cx="7.65" cy="7" r="1.2" fill="black" />
+                      <path
+                        d="M12 9h2.1v1.04h.03c.29-.55 1.02-1.13 2.1-1.13 2.25 0 2.67 1.42 2.67 3.27v4.32h-2.3v-3.83c0-.91-.02-2.09-1.27-2.09-1.28 0-1.47 1-1.47 2.03v3.89H12V9z"
+                        fill="black"
+                      />
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
