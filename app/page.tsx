@@ -209,9 +209,9 @@ export default function HomePage() {
               {/* TA – TOP (most recent) */}
               <li className="relative">
                 {/* mobile dot – yellow on the right */}
-                <span className="absolute right-3 top-5 h-3 w-3 rounded-full bg-amber-400 ring-2 ring-black sm:hidden" />
+                <span className="absolute right-3 top-5 h-3 w-3 rounded-full bg-amber-400 ring-2 ring-white sm:hidden" />
                 {/* timeline dot – yellow (desktop only) */}
-                <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-amber-400 ring-4 ring-black sm:block" />
+                <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-amber-400 ring-4 ring-white sm:block" />
                 <article className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-5">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                     <div className="flex items-center gap-3 sm:gap-4">
@@ -250,9 +250,9 @@ export default function HomePage() {
               {/* Stellantis – middle */}
               <li className="relative">
                 {/* mobile dot – Stellantis blue on the right */}
-                <span className="absolute right-3 top-5 h-3 w-3 rounded-full bg-[#001D3D] ring-2 ring-black sm:hidden" />
+                <span className="absolute right-3 top-5 h-3 w-3 rounded-full bg-[#001D3D] ring-2 ring-white sm:hidden" />
                 {/* timeline dot – Stellantis blue (desktop only) */}
-                <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-[#001D3D] ring-4 ring-black sm:block" />
+                <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-[#001D3D] ring-4 ring-white sm:block" />
                 <article className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-5">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                     <div className="flex items-center gap-3 sm:gap-4">
@@ -293,9 +293,9 @@ export default function HomePage() {
               {/* Glendor – bottom (oldest) */}
               <li className="relative">
                 {/* mobile dot – Glendor green on the right */}
-                <span className="absolute right-3 top-5 h-3 w-3 rounded-full bg-[#1fa985] ring-2 ring-black sm:hidden" />
+                <span className="absolute right-3 top-5 h-3 w-3 rounded-full bg-[#1fa985] ring-2 ring-white sm:hidden" />
                 {/* timeline dot – Glendor green (desktop only) */}
-                <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-[#1fa985] ring-4 ring-black sm:block" />
+                <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-[#1fa985] ring-4 ring-white sm:block" />
                 <article className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-5">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                     <div className="flex items-center gap-3 sm:gap-4">
