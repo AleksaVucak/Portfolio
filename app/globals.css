@@ -5,3 +5,31 @@
     @apply rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-2xl;
   }
 }
+
+.avatar-glow {
+  position: absolute;
+  inset: -40px;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.75), transparent 55%),
+    radial-gradient(circle at 80% 100%, rgba(129, 140, 248, 0.8), transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(3, 19, 252, 0.95), transparent 60%);
+  opacity: 0.7;
+  filter: blur(32px);
+  animation: avatarGlow 18s ease-in-out infinite alternate;
+}
+
+@keyframes avatarGlow {
+  0% {
+    transform: translate3d(-4px, 4px, 0) scale(0.98);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate3d(4px, -4px, 0) scale(1.04);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(-2px, 2px, 0) scale(1);
+    opacity: 0.65;
+  }
+}

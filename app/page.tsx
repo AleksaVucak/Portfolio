@@ -18,25 +18,32 @@ export default function HomePage() {
   return (
     <main
       id="top"
-      className="relative min-h-screen overflow-hidden bg-black text-white transition-colors duration-500 pt-16"
+      className="relative min-h-screen overflow-hidden bg-[#020617] text-white transition-colors duration-500 pt-16"
     >
+      {/* navy background with subtle blue glows */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#020617] via-black to-black" />
+        <div className="absolute inset-0 mix-blend-screen opacity-60 bg-[radial-gradient(circle_at_15%_0%,_rgba(56,189,248,0.45),_transparent_55%)]" />
+        <div className="absolute inset-0 mix-blend-screen opacity-55 bg-[radial-gradient(circle_at_85%_110%,_rgba(129,140,248,0.5),_transparent_55%)]" />
+      </div>
+
       <div className="relative z-10">
         {/* NAVBAR */}
         <header className="fixed top-4 left-0 right-0 z-20 px-4 sm:px-8">
-          <div className="mx-auto flex max-w-5xl items-center rounded-3xl border border-white/10 bg-black/80 px-4 py-2.5 shadow-[0_18px_45px_rgba(0,0,0,0.85)] backdrop-blur-2xl">
+          <div className="mx-auto flex max-w-5xl items-center rounded-3xl border border-white/10 bg-gradient-to-r from-slate-950/90 via-black/80 to-slate-950/90 px-4 py-2.5 shadow-[0_18px_45px_rgba(0,0,0,0.85)] backdrop-blur-2xl">
             {/* Left: AV logo */}
             <div className="flex flex-1">
               <a
                 href="#top"
                 onClick={(e) => handleSmoothScroll(e, "#top")}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-sky-400 to-emerald-400 text-xs font-semibold text-slate-950 shadow-[0_0_26px_rgba(56,189,248,0.6)]"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#020617] via-[#0313fc] to-[#3b82f6] text-[11px] font-semibold tracking-tight text-slate-50 ring-2 ring-white/15"
               >
                 AV
               </a>
             </div>
 
             {/* Center: nav buttons */}
-            <nav className="flex items-center gap-1 rounded-full bg-white/5 px-1.5 py-1 text-xs sm:text-sm">
+            <nav className="flex items-center gap-1 rounded-full bg-white/5 px-1.5 py-1 text-xs sm:text-sm shadow-[0_0_25px_rgba(15,23,42,0.9)]">
               <a
                 href="#experience"
                 onClick={(e) => handleSmoothScroll(e, "#experience")}
@@ -55,7 +62,7 @@ export default function HomePage() {
 
             {/* Right: updated status */}
             <div className="hidden flex-1 items-center justify-end gap-2 text-[11px] text-white/50 sm:flex">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
               <span>Updated 12/03/25</span>
             </div>
           </div>
@@ -64,10 +71,12 @@ export default function HomePage() {
         {/* HERO — fills the rest of the screen under the navbar */}
         <section className="flex min-h-[calc(100vh-4rem)] items-center justify-center px-4 py-10 sm:px-6">
           <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-6 text-center">
-            {/* Circular image with local blue glow */}
+            {/* Circular image with modern glow (no extra ring) */}
             <div className="relative">
-              <div className="absolute inset-0 bg-sky-500/35 blur-3xl" />
-              <div className="relative rounded-full border border-white/20 bg-white/10 p-[3px] shadow-[0_0_60px_rgba(56,189,248,0.7)]">
+              {/* animated aurora glow (CSS in globals) */}
+              <div className="avatar-glow" />
+              {/* inner frame */}
+              <div className="relative rounded-full border border-white/20 bg-black/40 p-[3px] shadow-[0_0_60px_rgba(3,19,252,0.9)]">
                 <div className="relative h-40 w-40 overflow-hidden rounded-full sm:h-48 sm:w-48">
                   <Image
                     src="/me2.jpg"
@@ -93,15 +102,15 @@ export default function HomePage() {
                 infrastructure, and product intersect.
               </p>
 
-              {/* CTA buttons – conjoined pill with icons + labels */}
+              {/* CTA buttons – same pill + button style as navbar */}
               <div className="mt-4 flex justify-center">
-                <div className="inline-flex items-center gap-1 rounded-full bg-white/5 px-1.5 py-1.5 text-xs sm:text-sm">
-                  {/* Resume – now same style as other buttons */}
+                <div className="flex items-center gap-1 rounded-full bg-white/5 px-1.5 py-1 text-xs sm:text-sm shadow-[0_0_25px_rgba(15,23,42,0.9)]">
+                  {/* Resume */}
                   <a
                     href="/Aleksa_Vucak_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/0 px-4 py-1.5 font-semibold text-white/90 backdrop-blur-2xl transition hover:bg-white/10 hover:text-white"
+                    className="flex items-center gap-1.5 rounded-full px-4 py-1.5 font-medium text-white/85 transition hover:bg-white/10 hover:text-white"
                   >
                     <svg
                       aria-hidden="true"
@@ -129,7 +138,7 @@ export default function HomePage() {
                     href="https://github.com/AleksaVucak"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/0 px-4 py-1.5 font-medium text-white/80 backdrop-blur-2xl transition hover:bg-white/10 hover:text-white"
+                    className="flex items-center gap-1.5 rounded-full px-4 py-1.5 font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
                   >
                     <svg
                       aria-hidden="true"
@@ -149,7 +158,7 @@ export default function HomePage() {
                     href="https://www.linkedin.com/in/aleksa-vucak-587923298/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/0 px-4 py-1.5 font-medium text-white/80 backdrop-blur-2xl transition hover:bg-white/10 hover:text-white"
+                    className="flex items-center gap-1.5 rounded-full px-4 py-1.5 font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
                   >
                     <svg
                       aria-hidden="true"
@@ -338,7 +347,7 @@ export default function HomePage() {
               {/* content on top */}
               <div className="relative flex items-center justify-center px-6 py-8">
                 <span className="rounded-full bg-black/80 px-4 py-1 text-xs font-semibold tracking-wide text-yellow-300 sm:text-sm">
-                  PROJECT GALLERY UNDER CONSTRUCTION
+                  🚧 PROJECT GALLERY UNDER CONSTRUCTION 🚧
                 </span>
               </div>
             </div>
