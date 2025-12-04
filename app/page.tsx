@@ -85,13 +85,13 @@ export default function HomePage() {
           className="border-t border-white/10 px-4 py-16 sm:px-6"
         >
           <div className="mx-auto w-full max-w-5xl">
-            {/* centered heading + shorter subtitle */}
+            {/* centered header + subheading */}
             <div className="mb-8 space-y-2 text-center">
               <h2 className="text-xl font-semibold sm:text-2xl">
                 Work Experience
               </h2>
-              <p className="mx-auto max-w-xl text-sm text-white/60 sm:text-base">
-              My track record across academia and industry.
+              <p className="text-sm text-white/60 sm:text-base">
+                My track record across academia and industry.
               </p>
             </div>
 
@@ -123,18 +123,19 @@ export default function HomePage() {
                       September 2025 - Present
                     </span>
                   </div>
-                  <ul className="mt-3 space-y-1.5 text-xs text-white/70 sm:text-sm">
-                    <li>• Led labs in C, Unix, and low-level systems.</li>
-                    <li>• Marked assignments and crafted detailed feedback.</li>
-                    <li>• Coached 100+ students on debugging, tooling, and design.</li>
-                  </ul>
+                  <p className="mt-3 text-xs text-white/70 sm:text-sm">
+                  Led a 33-student weekly systems programming lab in C and Unix for COMP 2560, running 
+                  live demos on processes, pipes, sockets, and memory management while instructing students 
+                  on gcc, gdb, and Linux tooling. Marked labs, assignments, and exams with rubric-based 
+                  feedback and a typical turnaround of under 72 hours.
+                  </p>
                 </article>
               </li>
 
               {/* Stellantis – middle */}
               <li className="relative">
-                {/* timeline dot – blue */}
-                <span className="absolute -left-[9px] top-3 h-4 w-4 rounded-full ring-4 ring-black" style={{ backgroundColor: "#243882" }} />
+                {/* timeline dot – Stellantis blue */}
+                <span className="absolute -left-[9px] top-3 h-4 w-4 rounded-full bg-[#001D3D] ring-4 ring-black" />
                 <article className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                   <div className="flex items-center justify-between gap-4">
                     {/* Stellantis logo */}
@@ -143,7 +144,7 @@ export default function HomePage() {
                         src="/stellantis.png"
                         alt="Stellantis logo"
                         fill
-                        className="object-contain scale-150"
+                        className="object-contain scale-140"
                       />
                     </div>
                     <div className="flex-1">
@@ -158,20 +159,21 @@ export default function HomePage() {
                       April 2025 - August 2025
                     </span>
                   </div>
-                  <ul className="mt-3 space-y-1.5 text-xs text-white/70 sm:text-sm">
-                    <li>• Battery health and fault-detection ML tooling.</li>
-                    <li>• Data pipelines, feature engineering, and eval dashboards.</li>
-                    <li>
-                      • Partnered with controls engineers on production EV
-                      use-cases.
-                    </li>
-                  </ul>
+                  <p className="mt-3 text-xs text-white/70 sm:text-sm">
+                  Built an end-to-end battery fault-detection system over EV BMS logs that windows time-series data, 
+                  extracts voltage sag, SOC, and thermal features, and applies supervised/unsupervised 
+                  models in Python (pandas, NumPy, scikit-learn, XGBoost) to raise precision at a fixed 
+                  recall by 21% on tested cells and packs. Added SOC-aware calibration policies and 
+                  automated experiment reports with feature attributions and risk bands, reducing false
+                  positives by ~32% and cutting manual triage time per log by about 60% for the battery 
+                  safety team.
+                  </p>
                 </article>
               </li>
 
               {/* Glendor – bottom (oldest) */}
               <li className="relative">
-                {/* timeline dot – green */}
+                {/* timeline dot – Glendor green */}
                 <span className="absolute -left-[9px] top-3 h-4 w-4 rounded-full bg-[#1fa985] ring-4 ring-black" />
                 <article className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                   <div className="flex items-center justify-between gap-4">
@@ -196,14 +198,13 @@ export default function HomePage() {
                       September 2024 - December 2024
                     </span>
                   </div>
-                  <ul className="mt-3 space-y-1.5 text-xs text-white/70 sm:text-sm">
-                    <li>• De-identification of PHI in CT/MRI data.</li>
-                    <li>
-                      • Blur-detection & anonymization pipelines using CV
-                      models.
-                    </li>
-                    <li>• Contributing toward publication-ready research.</li>
-                  </ul>
+                  <p className="mt-3 text-xs text-white/70 sm:text-sm">
+                  Applied blur application and detection algorithms to 2,000+ medical images and video 
+                  frames using Python, OpenCV, and CV models, reaching ~92% F1 on PHI redaction while 
+                  preserving diagnostic context. Automated structured output folders, metrics logs, and 
+                  comparison reports that removed 99% of the manual file-handling work and helped a 
+                  7-person team plug de-identification into real-time healthcare workflows.
+                  </p>
                 </article>
               </li>
             </ol>
@@ -215,7 +216,7 @@ export default function HomePage() {
           id="projects"
           className="border-t border-white/10 px-4 py-16 sm:px-6"
         >
-          <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+          <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-6 text-center">
             {/* Caution tape block only */}
             <div className="relative mt-2 w-full max-w-3xl overflow-hidden rounded-2xl border border-yellow-400/80 bg-black/70 text-sm sm:text-base">
               {/* stripes */}
