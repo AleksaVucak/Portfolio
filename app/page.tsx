@@ -192,11 +192,11 @@ export default function HomePage() {
         {/* WORK EXPERIENCE – vertical timeline */}
         <section
           id="experience"
-          className="border-t border-white/10 px-4 py-16 sm:px-6"
+          className="border-t border-white/10 px-4 py-12 sm:px-6 sm:py-16"
         >
           <div className="mx-auto w-full max-w-5xl">
             {/* centered header + subheading */}
-            <div className="mb-8 space-y-2 text-center">
+            <div className="mb-6 space-y-2 text-center sm:mb-8">
               <h2 className="text-xl font-semibold sm:text-2xl">
                 Work Experience
               </h2>
@@ -205,35 +205,38 @@ export default function HomePage() {
               </p>
             </div>
 
-            <ol className="relative space-y-8 border-l border-white/10 pl-6">
+            <ol className="relative space-y-6 pl-0 border-l-0 sm:space-y-8 sm:border-l sm:border-white/10 sm:pl-6">
               {/* TA – TOP (most recent) */}
               <li className="relative">
-                {/* timeline dot – yellow */}
-                <span className="absolute -left-[9px] top-3 h-4 w-4 rounded-full bg-amber-400 ring-4 ring-black" />
-                <article className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                  <div className="flex items-center justify-between gap-4">
-                    {/* UWindsor logo */}
-                    <div className="relative h-10 w-10 rounded-xl bg-white">
-                      <Image
-                        src="/uow.png"
-                        alt="University of Windsor logo"
-                        fill
-                        className="object-contain"
-                      />
+                {/* timeline dot – yellow (desktop only) */}
+                <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-amber-400 ring-4 ring-black sm:block" />
+                <article className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-5">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      {/* UWindsor logo */}
+                      <div className="relative h-10 w-10 shrink-0 rounded-xl bg-white">
+                        <Image
+                          src="/uow.png"
+                          alt="University of Windsor logo"
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-semibold sm:text-base">
+                          Undergraduate Teaching Assistant
+                        </h3>
+                        <p className="text-xs text-white/60 sm:text-sm">
+                          University of Windsor · School of Computer Science
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-sm font-semibold sm:text-base">
-                        Undergraduate Teaching Assistant
-                      </h3>
-                      <p className="text-xs text-white/60 sm:text-sm">
-                        University of Windsor · School of Computer Science
-                      </p>
-                    </div>
-                    <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70">
+
+                    <span className="self-start rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70 sm:self-center">
                       September 2025 - Present
                     </span>
                   </div>
-                  <p className="mt-3 text-xs text-white/70 sm:text-sm">
+                  <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
                     Led a 33-student weekly systems programming lab in C and
                     Unix for COMP 2560, running live demos on processes, pipes,
                     sockets, and memory management while instructing students on
@@ -246,32 +249,35 @@ export default function HomePage() {
 
               {/* Stellantis – middle */}
               <li className="relative">
-                {/* timeline dot – Stellantis blue */}
-                <span className="absolute -left-[9px] top-3 h-4 w-4 rounded-full bg-[#001D3D] ring-4 ring-black" />
-                <article className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                  <div className="flex items-center justify-between gap-4">
-                    {/* Stellantis logo */}
-                    <div className="relative h-10 w-10 rounded-xl bg-white">
-                      <Image
-                        src="/stellantis.png"
-                        alt="Stellantis logo"
-                        fill
-                        className="object-contain scale-140"
-                      />
+                {/* timeline dot – Stellantis blue (desktop only) */}
+                <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-[#001D3D] ring-4 ring-black sm:block" />
+                <article className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-5">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      {/* Stellantis logo */}
+                      <div className="relative h-10 w-10 shrink-0 rounded-xl bg-white">
+                        <Image
+                          src="/stellantis.png"
+                          alt="Stellantis logo"
+                          fill
+                          className="object-contain scale-140"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-semibold sm:text-base">
+                          Machine Learning Engineer Co-op
+                        </h3>
+                        <p className="text-xs text-white/60 sm:text-sm">
+                          Stellantis · Battery State Estimation
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-sm font-semibold sm:text-base">
-                        Machine Learning Engineer Co-op
-                      </h3>
-                      <p className="text-xs text-white/60 sm:text-sm">
-                        Stellantis · Battery State Estimation
-                      </p>
-                    </div>
-                    <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70">
+
+                    <span className="self-start rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70 sm:self-center">
                       April 2025 - August 2025
                     </span>
                   </div>
-                  <p className="mt-3 text-xs text-white/70 sm:text-sm">
+                  <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
                     Built an end-to-end battery fault-detection system over EV
                     BMS logs that windows time-series data, extracts voltage
                     sag, SOC, and thermal features, and applies
@@ -288,32 +294,35 @@ export default function HomePage() {
 
               {/* Glendor – bottom (oldest) */}
               <li className="relative">
-                {/* timeline dot – Glendor green */}
-                <span className="absolute -left-[9px] top-3 h-4 w-4 rounded-full bg-[#1fa985] ring-4 ring-black" />
-                <article className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                  <div className="flex items-center justify-between gap-4">
-                    {/* Glendor logo */}
-                    <div className="relative h-10 w-10 rounded-xl bg-white">
-                      <Image
-                        src="/glendor.svg"
-                        alt="Glendor logo"
-                        fill
-                        className="object-contain"
-                      />
+                {/* timeline dot – Glendor green (desktop only) */}
+                <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-[#1fa985] ring-4 ring-black sm:block" />
+                <article className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-5">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      {/* Glendor logo */}
+                      <div className="relative h-10 w-10 shrink-0 rounded-xl bg-white">
+                        <Image
+                          src="/glendor.svg"
+                          alt="Glendor logo"
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-semibold sm:text-base">
+                          Software Engineer Intern
+                        </h3>
+                        <p className="text-xs text-white/60 sm:text-sm">
+                          Glendor, Inc. · Medical Privacy
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-sm font-semibold sm:text-base">
-                        Software Engineer Intern
-                      </h3>
-                      <p className="text-xs text-white/60 sm:text-sm">
-                        Glendor, Inc. · Medical Privacy
-                      </p>
-                    </div>
-                    <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70">
+
+                    <span className="self-start rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70 sm:self-center">
                       September 2024 - December 2024
                     </span>
                   </div>
-                  <p className="mt-3 text-xs text-white/70 sm:text-sm">
+                  <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
                     Applied blur application and detection algorithms to 2,000+
                     medical images and video frames using Python, OpenCV, and CV
                     models, reaching ~92% F1 on PHI redaction while preserving
