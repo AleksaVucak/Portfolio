@@ -191,7 +191,7 @@ export default function HomePage() {
                         Software Engineer Intern
                       </h3>
                       <p className="text-xs text-white/60 sm:text-sm">
-                        Glendor, Inc. · Medical Imaging
+                        Glendor, Inc. · Medical Privacy
                       </p>
                     </div>
                     <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70">
