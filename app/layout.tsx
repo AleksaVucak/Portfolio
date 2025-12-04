@@ -6,7 +6,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Aleksa Vucak · Portfolio",
-  description: "Modern AI & software engineering portfolio of Aleksa Vucak.",
+  description: "Aleksa Vucak's SWE Portfolio",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
