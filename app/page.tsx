@@ -208,6 +208,8 @@ export default function HomePage() {
             <ol className="relative space-y-6 pl-0 border-l-0 sm:space-y-8 sm:border-l sm:border-white/10 sm:pl-6">
               {/* TA – TOP (most recent) */}
               <li className="relative">
+                {/* mobile dot – yellow on the right */}
+                <span className="absolute right-3 top-5 h-3 w-3 rounded-full bg-amber-400 ring-2 ring-black sm:hidden" />
                 {/* timeline dot – yellow (desktop only) */}
                 <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-amber-400 ring-4 ring-black sm:block" />
                 <article className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-5">
@@ -237,15 +239,18 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                  Led system programming labs in C and Unix for 30+ students, demoing 
-                  processes/pipes/sockets and teaching gcc, gdb, and Linux tooling while providing 
-                  rubric-based grading with a typical turnaround under 72 hours.
+                    Led system programming labs in C and Unix for 30+ students,
+                    demoing processes/pipes/sockets and teaching gcc, gdb, and
+                    Linux tooling while providing rubric-based grading with a
+                    typical turnaround under 72 hours.
                   </p>
                 </article>
               </li>
 
               {/* Stellantis – middle */}
               <li className="relative">
+                {/* mobile dot – Stellantis blue on the right */}
+                <span className="absolute right-3 top-5 h-3 w-3 rounded-full bg-[#001D3D] ring-2 ring-black sm:hidden" />
                 {/* timeline dot – Stellantis blue (desktop only) */}
                 <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-[#001D3D] ring-4 ring-black sm:block" />
                 <article className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-5">
@@ -275,16 +280,20 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                  Developed an end-to-end battery fault-detection pipeline over EV BMS logs using Python, 
-                  pandas, NumPy, scikit-learn, and tree-based gradient-boosting models to engineer 
-                  time-series features and automatically flag risky cells/packs, improving 
-                  fault-flagging precision at fixed recall by ~21%.                 
+                    Developed an end-to-end battery fault-detection pipeline
+                    over EV BMS logs using Python, pandas, NumPy, scikit-learn,
+                    and tree-based gradient-boosting models to engineer
+                    time-series features and automatically flag risky
+                    cells/packs, improving fault-flagging precision at fixed
+                    recall by ~21%.
                   </p>
                 </article>
               </li>
 
               {/* Glendor – bottom (oldest) */}
               <li className="relative">
+                {/* mobile dot – Glendor green on the right */}
+                <span className="absolute right-3 top-5 h-3 w-3 rounded-full bg-[#1fa985] ring-2 ring-black sm:hidden" />
                 {/* timeline dot – Glendor green (desktop only) */}
                 <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-[#1fa985] ring-4 ring-black sm:block" />
                 <article className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-5">
@@ -314,9 +323,10 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                  Built a Python/OpenCV pipeline to detect and blur PHI in 2000+ medical images and 
-                  video frames, tuning CV models and automating reports to reach ~92% F1 while 
-                  eliminating ~99% of the manual file-handling work.
+                    Built a Python/OpenCV pipeline to detect and blur PHI in
+                    2000+ medical images and video frames, tuning CV models and
+                    automating reports to reach ~92% F1 while eliminating ~99%
+                    of the manual file-handling work.
                   </p>
                 </article>
               </li>
