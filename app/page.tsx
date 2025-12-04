@@ -237,7 +237,7 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                  Led COMP-2560 systems programming labs in C and Unix for 33 students, demoing 
+                  Led system programming labs in C and Unix for 33 students, demoing 
                   processes/pipes/sockets and teaching gcc, gdb, and Linux tooling while providing 
                   rubric-based grading with a typical turnaround under 72 hours.
                   </p>
@@ -277,7 +277,7 @@ export default function HomePage() {
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
                   Developed an end-to-end battery fault-detection pipeline over EV BMS logs using Python, 
                   pandas, NumPy, scikit-learn, and tree-based gradient-boosting models to engineer 
-                  time-series features and automatically flag risky cells and packs, improving 
+                  time-series features and automatically flag risky cells/packs, improving 
                   fault-flagging precision at fixed recall by ~21%.                 
                   </p>
                 </article>
