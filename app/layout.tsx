@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full bg-black">
-      <body className="min-h-screen bg-black text-white antialiased overscroll-y-none">
+    <html lang="en" className="h-full">
+      <body className="min-h-screen text-white antialiased overscroll-y-none">
         {children}
         {/* Vercel analytics & performance */}
         <Analytics />

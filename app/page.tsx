@@ -18,25 +18,25 @@ export default function HomePage() {
   return (
     <main
       id="top"
-      className="relative min-h-screen overflow-hidden bg-[#020617] text-white transition-colors duration-500 pt-16"
+      className="relative min-h-screen overflow-hidden text-white transition-colors duration-500 pt-16"
     >
-      {/* navy background with subtle blue glows */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#020617] via-black to-black" />
-        <div className="absolute inset-0 mix-blend-screen opacity-60 bg-[radial-gradient(circle_at_15%_0%,_rgba(56,189,248,0.45),_transparent_55%)]" />
-        <div className="absolute inset-0 mix-blend-screen opacity-55 bg-[radial-gradient(circle_at_85%_110%,_rgba(129,140,248,0.5),_transparent_55%)]" />
+      {/* Dark navy background with subtle blue glows */}
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-linear-to-b from-[#020617] via-black to-black" />
+        <div className="absolute inset-0 mix-blend-screen opacity-60 bg-[radial-gradient(circle_at_15%_0%,rgba(56,189,248,0.45),transparent_55%)]" />
+        <div className="absolute inset-0 mix-blend-screen opacity-55 bg-[radial-gradient(circle_at_85%_110%,rgba(129,140,248,0.5),transparent_55%)]" />
       </div>
 
       <div className="relative z-10">
         {/* NAVBAR */}
         <header className="fixed top-4 left-0 right-0 z-20 px-4 sm:px-8">
-          <div className="mx-auto flex max-w-5xl items-center rounded-3xl border border-white/10 bg-gradient-to-r from-slate-950/90 via-black/80 to-slate-950/90 px-4 py-2.5 shadow-[0_18px_45px_rgba(0,0,0,0.85)] backdrop-blur-2xl">
+          <div className="mx-auto flex max-w-5xl items-center rounded-3xl border border-white/10 bg-linear-to-r from-slate-950/90 via-black/80 to-slate-950/90 px-4 py-2.5 shadow-[0_18px_45px_rgba(0,0,0,0.85)] backdrop-blur-2xl">
             {/* Left: AV logo */}
             <div className="flex flex-1">
               <a
                 href="#top"
                 onClick={(e) => handleSmoothScroll(e, "#top")}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#020617] via-[#0313fc] to-[#3b82f6] text-[11px] font-semibold tracking-tight text-slate-50 ring-2 ring-white/15"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-br from-[#020617] via-[#0313fc] to-[#3b82f6] text-[11px] font-semibold tracking-tight text-slate-50 ring-2 ring-white/15"
               >
                 AV
               </a>
