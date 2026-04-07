@@ -212,7 +212,47 @@ export default function HomePage() {
             </div>
 
             <ol className="relative space-y-6 pl-0 border-l-0 sm:space-y-8 sm:border-l sm:border-white/10 sm:pl-6">
-              {/* TA – TOP (most recent) */}
+              {/* Stellantis SWE – TOP (most recent) */}
+              <li className="relative">
+                {/* mobile dot – Stellantis blue on the right */}
+                <span className="absolute right-3 top-5 h-3 w-3 rounded-full bg-blue-600 ring-2 ring-white sm:hidden" />
+                {/* timeline dot – Stellantis blue (desktop only) */}
+                <span className="absolute hidden h-4 w-4 -left-[9px] top-5 rounded-full bg-blue-600 ring-4 ring-black sm:block" />
+                <article className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-5">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      {/* Stellantis logo */}
+                      <div className="relative h-10 w-10 shrink-0 rounded-xl bg-white">
+                        <Image
+                          src="/stellantis.png"
+                          alt="Stellantis logo"
+                          fill
+                          className="object-contain scale-140"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-semibold sm:text-base">
+                          Software Engineer Co-op
+                        </h3>
+                        <p className="text-xs text-white/60 sm:text-sm">
+                          Stellantis · Battery OTA Analytics
+                        </p>
+                      </div>
+                    </div>
+
+                    <span className="self-start rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70 sm:self-center">
+                      January 2026 - Present
+                    </span>
+                  </div>
+                  <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
+                    Engineered an internal EIS platform for Stellantis&apos; <strong>OTA</strong> team using <strong>React</strong>, <strong>TypeScript</strong>, <strong>FastAPI</strong>, and <strong>SQLite</strong> to unify
+                    3D circuit configuration, simulation, hardware control,
+                    reducing board iteration costs by <strong>$1,050</strong>.
+                  </p>
+                </article>
+              </li>
+
+              {/* TA – second most recent */}
               <li className="relative">
                 {/* mobile dot – yellow on the right */}
                 <span className="absolute right-3 top-5 h-3 w-3 rounded-full bg-amber-400 ring-2 ring-white sm:hidden" />
@@ -245,10 +285,9 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                    Led system programming labs in C and Unix for 30+ students,
-                    demoing processes/pipes/sockets and teaching gcc, gdb, and
-                    Linux tooling while providing rubric-based grading with a
-                    typical turnaround under 72 hours.
+                    Led a weekly <strong>Software Development</strong> lab for <strong>37 students</strong>, teaching <strong>Java</strong> and <strong>OOP</strong> through live coding, debugging demos, and guided practice 
+                    with <strong>classes</strong>, <strong>inheritance</strong>, <strong>interfaces</strong>, and <strong>collections</strong> while providing rubric-based grading 
+                    with a typical turnaround under <strong>72 hours</strong>.
                   </p>
                 </article>
               </li>
@@ -287,11 +326,11 @@ export default function HomePage() {
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
                     Developed an end-to-end battery fault-detection pipeline
-                    over EV BMS logs using Python, pandas, NumPy, scikit-learn,
-                    and tree-based gradient-boosting models to engineer
+                    over EV BMS logs using <strong>Python</strong>, <strong>pandas</strong>, <strong>NumPy</strong>, <strong>scikit-learn</strong>,
+                    and <strong>tree-based gradient-boosting</strong> models to engineer
                     time-series features and automatically flag risky
                     cells/packs, improving fault-flagging precision at fixed
-                    recall by ~21%.
+                    recall by <strong>21%</strong>.
                   </p>
                 </article>
               </li>
@@ -319,7 +358,7 @@ export default function HomePage() {
                           Software Engineer Intern
                         </h3>
                         <p className="text-xs text-white/60 sm:text-sm">
-                          Glendor, Inc. · Medical Privacy
+                          Glendor, Inc. · Medical Imaging
                         </p>
                       </div>
                     </div>
@@ -329,10 +368,8 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                    Built a Python/OpenCV pipeline to detect and blur PHI in
-                    2000+ medical images and video frames, tuning CV models and
-                    automating reports to reach ~92% F1 while eliminating ~99%
-                    of the manual file-handling work.
+                    Built a <strong>Python/OpenCV</strong> pipeline to detect and blur PHI in <strong>2000+</strong> medical images, tuning CV models and
+                    automating reports to reach <strong>92% F1</strong> while eliminating <strong>96%</strong> of the manual file-handling work.
                   </p>
                 </article>
               </li>
