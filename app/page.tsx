@@ -3,6 +3,8 @@
 import Image from "next/image";
 import type { MouseEvent } from "react";
 
+import { SectionScrollNav } from "./components/SectionScrollNav";
+
 export default function HomePage() {
   const handleSmoothScroll = (
     event: MouseEvent<HTMLAnchorElement>,
@@ -16,10 +18,7 @@ export default function HomePage() {
   };
 
   return (
-    <main
-      id="top"
-      className="relative min-h-screen overflow-hidden text-white transition-colors duration-500 pt-16"
-    >
+    <main className="relative min-h-screen overflow-hidden text-white transition-colors duration-500 pt-16">
       {/* Dark navy background with subtle blue glows */}
       <div className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-linear-to-b from-[#020617] via-black to-black" />
@@ -28,6 +27,8 @@ export default function HomePage() {
       </div>
 
       <div className="relative z-10">
+        <SectionScrollNav />
+
         {/* NAVBAR */}
         <header className="fixed top-4 left-0 right-0 z-20 px-4 sm:px-8">
           <div className="mx-auto flex max-w-5xl items-center rounded-3xl border border-white/10 bg-linear-to-r from-slate-950/90 via-black/80 to-slate-950/90 px-4 py-2.5 shadow-[0_18px_45px_rgba(0,0,0,0.85)] backdrop-blur-2xl">
@@ -69,7 +70,10 @@ export default function HomePage() {
         </header>
 
         {/* HERO — fills the rest of the screen under the navbar */}
-        <section className="flex min-h-[calc(100vh-4rem)] items-center justify-center px-4 py-10 sm:px-6">
+        <section
+          id="top"
+          className="scroll-mt-28 flex min-h-[calc(100vh-4rem)] items-center justify-center px-4 py-10 sm:px-6"
+        >
           <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-6 text-center">
             {/* Circular image with modern glow (no extra ring) */}
             <div className="relative">
@@ -198,11 +202,11 @@ export default function HomePage() {
         {/* WORK EXPERIENCE – vertical timeline */}
         <section
           id="experience"
-          className="border-t border-white/10 px-4 py-12 sm:px-6 sm:py-16"
+          className="scroll-mt-28 border-t border-white/10 px-4 py-12 sm:px-6 sm:py-16"
         >
           <div className="mx-auto w-full max-w-5xl">
             {/* centered header + subheading */}
-            <div className="mb-6 space-y-2 text-center sm:mb-8">
+            <div className="mb-2 space-y-2 text-center sm:mb-8">
               <h2 className="text-xl font-semibold sm:text-2xl">
                 Work Experience
               </h2>
@@ -380,7 +384,7 @@ export default function HomePage() {
         {/* PROJECTS */}
         <section
           id="projects"
-          className="border-t border-white/10 px-4 py-16 sm:px-6"
+          className="scroll-mt-28 border-t border-white/10 px-4 py-16 sm:px-6"
         >
           <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-6 text-center">
             {/* Caution tape block only */}
