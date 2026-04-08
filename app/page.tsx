@@ -159,7 +159,7 @@ export default function HomePage() {
 
                   {/* LinkedIn */}
                   <a
-                    href="https://www.linkedin.com/in/aleksa-vu%C4%8Dak-587923298/"
+                    href="https://www.linkedin.com/in/aleksa-vucak-587923298/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1.5 rounded-full px-4 py-1.5 font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
