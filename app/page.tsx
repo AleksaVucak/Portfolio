@@ -249,7 +249,7 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                    Engineered an internal EIS platform for Stellantis&apos; <strong>OTA</strong> team using <strong>React</strong>, <strong>TypeScript</strong>, <strong>FastAPI</strong>, and <strong>SQLite</strong> to unify
+                    Engineered an internal EIS platform for Stellantis&apos; <strong>OTA</strong> team using <strong>React</strong>, <strong>TypeScript</strong>, <strong>C++</strong>, <strong>FastAPI</strong>, and <strong>SQLite</strong> to unify
                     3D circuit configuration, simulation, hardware control,
                     reducing board iteration costs by <strong>$1,050</strong>.
                   </p>
