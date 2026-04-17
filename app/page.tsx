@@ -359,7 +359,7 @@ export default function HomePage() {
                       </div>
                       <div>
                         <h3 className="text-sm font-semibold sm:text-base">
-                          Software Engineer Intern
+                          Computer Vision Engineer Intern
                         </h3>
                         <p className="text-xs text-white/60 sm:text-sm">
                           Glendor, Inc. · Medical Imaging
