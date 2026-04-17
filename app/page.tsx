@@ -330,8 +330,7 @@ export default function HomePage() {
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
                     Developed an end-to-end battery fault-detection pipeline
                     over EV BMS logs using <strong>Python</strong>, <strong>pandas</strong>, <strong>NumPy</strong>, <strong>scikit-learn</strong>,
-                    and <strong>tree-based gradient-boosting</strong> models to engineer
-                    time-series features and automatically flag risky
+                    and <strong>tree-based gradient-boosting</strong> models to automatically flag risky 
                     cells/packs, improving fault-flagging precision at fixed
                     recall by <strong>21%</strong>.
                   </p>
