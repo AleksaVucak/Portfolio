@@ -290,8 +290,7 @@ export default function HomePage() {
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
                     Led a weekly <strong>Software Development</strong> lab for <strong>37 students</strong>, teaching <strong>Java</strong>, <strong>OOP</strong>, and <strong>MySQL</strong> through live coding, debugging demos, and guided practice 
-                    with <strong>classes</strong>, <strong>inheritance</strong>, <strong>collections</strong>, <strong>queries</strong>, <strong>joins</strong>, and <strong>schema design</strong> 
-                    while returning grades within <strong>48 hours</strong>.
+                    with <strong>classes</strong>, <strong>inheritance</strong>, <strong>collections</strong>, <strong>queries</strong>, <strong>joins</strong>, and <strong>schema design</strong> while returning grades within <strong>48 hours</strong>.
                   </p>
                 </article>
               </li>
