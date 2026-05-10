@@ -239,7 +239,7 @@ export default function HomePage() {
                           Software Engineer Co-op
                         </h3>
                         <p className="text-xs text-white/60 sm:text-sm">
-                          Stellantis · Battery OTA Analytics
+                          Stellantis · Battery State Estimation & OTA Analytics
                         </p>
                       </div>
                     </div>
@@ -318,7 +318,7 @@ export default function HomePage() {
                           Machine Learning Engineer Co-op
                         </h3>
                         <p className="text-xs text-white/60 sm:text-sm">
-                          Stellantis · Battery State Estimation
+                          Stellantis · Battery State Estimation & OTA Analytics
                         </p>
                       </div>
                     </div>
@@ -328,11 +328,11 @@ export default function HomePage() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                    Developed an end-to-end battery fault-detection pipeline
-                    over EV BMS logs using <strong>Python</strong>, <strong>pandas</strong>, <strong>NumPy</strong>, <strong>scikit-learn</strong>,
-                    and <strong>tree-based gradient-boosting</strong> models to automatically flag risky 
-                    cells/packs, improving fault-flagging precision at fixed
-                    recall by <strong>21%</strong>.
+                  Developed an end-to-end battery anomaly-detection pipeline
+                  over EV BMS logs using <strong>Python</strong>, <strong>pandas</strong>, <strong>NumPy</strong>, <strong>scikit-learn</strong>,
+                  and <strong>tree-based gradient-boosting</strong> models to flag risky
+                  cells/packs, improving detection precision at fixed
+                  recall by <strong>21%</strong>.
                   </p>
                 </article>
               </li>
