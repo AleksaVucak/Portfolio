@@ -245,13 +245,13 @@ export default function HomePage() {
                     </div>
 
                     <span className="self-start rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/70 sm:self-center">
-                      January 2026 - Present
+                      January 2026 - May 2026
                     </span>
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                    Engineered an internal EIS platform for Stellantis&apos; <strong>OTA</strong> team using <strong>React</strong>, <strong>TypeScript</strong>, <strong>C++</strong>, <strong>FastAPI</strong>, and <strong>SQLite</strong> to unify
-                    3D circuit configuration, simulation, hardware control,
-                    reducing board iteration costs by <strong>$1,050</strong>.
+                    Engineered <strong>ImpedanceZ</strong>, an internal EIS platform for Stellantis&apos; <strong>OTA</strong> team using <strong>React</strong>, <strong>TypeScript</strong>, <strong>Three.js</strong>, <strong>FastAPI</strong>, <strong>SQLite</strong>, and <strong>C++</strong> to unify
+                    3D circuit configuration, simulation, and hardware control,
+                    reducing estimated <strong>PCB prototype</strong> iteration costs by <strong>~$1,050</strong> per cycle.
                   </p>
                 </article>
               </li>
